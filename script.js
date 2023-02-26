@@ -1,7 +1,8 @@
 let wordList;
 let wordArray;
 
-readN();
+window.onload = readN;
+
 function readN() {
     var txtFile = new XMLHttpRequest();
     txtFile.open('GET', 'http://localhost:5500/words.txt', true);
@@ -73,6 +74,8 @@ function enter() {
 
     if (/\D/.test(inp)) {
         alert('Do not include any non-number characters in the phone number.');
+    } else if (inp.length > 20) {
+        alert('Phone number is too long.');
     } else {
 
         a = 0;
