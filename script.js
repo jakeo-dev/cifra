@@ -69,97 +69,102 @@ let nine = [
 ]
 
 function enter() {
-    a = 0;
+    let inp = document.getElementById('input').value.replace(/\D/g, '');
 
-    for (i = 0; i < 10; i++) { // number of phone numbers to output
-        if (a < 500) { // how many attempts at trying to find matches before giving up
-            let letters = genLetters();
+    if (/\D/.test(inp)) {
+        alert('Do not include any non-number characters in the phone number.');
+    } else {
 
-            for (k = 0; k < wordArray.length; k++) { // loop through all words to see if the random letters matches any
-                matches = letters.toLowerCase().includes(wordArray[k]);
-                if (matches) {
-                    let wordSep = Array.from(wordArray[k]);
+        a = 0;
 
-                    let finalNums = '';
+        for (i = 0; i < 10; i++) { // number of phone numbers to output
+            if (a < 500) { // how many attempts at trying to find matches before giving up
+                let letters = genLetters(inp);
 
-                    for (m = 0; m < wordSep.length; m++) {
-                        num = getNumber(wordSep[m]);
-                        finalNums = finalNums + num;
-                    }
+                for (k = 0; k < wordArray.length; k++) { // loop through all words to see if the random letters matches any
+                    matches = letters.toLowerCase().includes(wordArray[k]);
+                    if (matches) {
+                        let wordSep = Array.from(wordArray[k]);
 
-                    final = document.getElementById('input').value.replace(finalNums, wordArray[k]);
+                        let finalNums = '';
 
-
-                    thing = letters.replace(wordArray[k].toUpperCase(), finalNums);
-                    for (o = 0; o < wordArray.length; o++) { // loop through all words to see if the random letters matches any
-                        matches2 = thing.toLowerCase().includes(wordArray[o]);
-                        if (matches2) {
-                            let wordSep = Array.from(wordArray[o]);
-
-                            let finalNums = '';
-
-                            for (m = 0; m < wordSep.length; m++) {
-                                num = getNumber(wordSep[m]);
-                                finalNums = finalNums + num;
-                            }
-
-                            n = final.indexOf(finalNums);
-
-                            // add dashes based on if there is a word next to this second word
-
-                            if (isLetter(final.substring(n + finalNums.length).charAt(0))) {
-                                final = final.replace(finalNums, wordArray[o] + '-');
-
-                            } else if (isLetter(final.substring(n - 1).charAt(0))) {
-                                final = final.replace(finalNums, '-' + wordArray[o]);
-
-                            } else {
-                                final = final.replace(finalNums, wordArray[o]);
-                            }
-
-                            break;
-
+                        for (m = 0; m < wordSep.length; m++) {
+                            num = getNumber(wordSep[m]);
+                            finalNums = finalNums + num;
                         }
-                    }
 
+                        final = inp.replace(finalNums, wordArray[k]);
 
-                    let finalSep = Array.from(final);
+                        thing = letters.replace(wordArray[k].toUpperCase(), finalNums);
+                        for (o = 0; o < wordArray.length; o++) { // loop through all words to see if the random letters matches any
+                            matches2 = thing.toLowerCase().includes(wordArray[o]);
+                            if (matches2) {
+                                let wordSep = Array.from(wordArray[o]);
 
-                    for (m = 0; m < finalSep.length; m++) { // add dashes
-                        if (!isNaN(finalSep[m]) && (isNaN(finalSep[m + 1]) && finalSep[m + 1] != null)) {
-                            finalSep[m] = finalSep[m] + '-';
-                        } else if (isNaN(finalSep[m]) && !isNaN(finalSep[m + 1])) {
-                            finalSep[m] = finalSep[m] + '-';
+                                let finalNums = '';
+
+                                for (m = 0; m < wordSep.length; m++) {
+                                    num = getNumber(wordSep[m]);
+                                    finalNums = finalNums + num;
+                                }
+
+                                n = final.indexOf(finalNums);
+
+                                // add dashes based on if there is a word next to this second word
+
+                                if (isLetter(final.substring(n + finalNums.length).charAt(0))) {
+                                    final = final.replace(finalNums, wordArray[o] + '-');
+
+                                } else if (isLetter(final.substring(n - 1).charAt(0))) {
+                                    final = final.replace(finalNums, '-' + wordArray[o]);
+
+                                } else {
+                                    final = final.replace(finalNums, wordArray[o]);
+                                }
+
+                                break;
+
+                            }
                         }
+
+
+                        let finalSep = Array.from(final);
+
+                        for (m = 0; m < finalSep.length; m++) { // add dashes
+                            if (!isNaN(finalSep[m]) && (isNaN(finalSep[m + 1]) && finalSep[m + 1] != null)) {
+                                finalSep[m] = finalSep[m] + '-';
+                            } else if (isNaN(finalSep[m]) && !isNaN(finalSep[m + 1])) {
+                                finalSep[m] = finalSep[m] + '-';
+                            }
+                        }
+
+                        document.getElementById('i' + i).innerText = finalSep.join('').toUpperCase();
+
+                        break;
                     }
-
-                    document.getElementById('i' + i).innerText = finalSep.join('').toUpperCase();
-
-                    break;
                 }
+
+                if (!matches && i > -1) {
+                    i = i - 1;
+
+                    a++;
+                }
+
+            } else {
+                i = 10;
+
+                for (l = 1; l < 10; l++) {
+                    document.getElementById('i' + l).innerText = '';
+                }
+                document.getElementById('i0').innerText = 'Unable to find any matches';
             }
-
-            if (!matches && i > -1) {
-                i = i - 1;
-
-                a++;
-            }
-
-        } else {
-            i = 10;
-
-            for (l = 1; l < 10; l++) {
-                document.getElementById('i' + l).innerText = '';
-            }
-            document.getElementById('i0').innerText = 'Unable to find any matches';
         }
-    }
 
-    document.getElementById('list').classList.remove('hidden');
+        document.getElementById('list').classList.remove('hidden');
+    }
 }
 
-function genLetters() {
-    let inp = document.getElementById('input').value;
+function genLetters(inp) {
     let inpArr = Array.from(inp);
 
     let randomLetter = '';

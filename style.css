@@ -521,20 +521,8 @@ video {
   margin-top: 2.5rem;
 }
 
-.mt-32 {
-  margin-top: 8rem;
-}
-
-.mt-16 {
-  margin-top: 4rem;
-}
-
 .mt-14 {
   margin-top: 3.5rem;
-}
-
-.mr-2 {
-  margin-right: 0.5rem;
 }
 
 .mt-2 {
@@ -551,18 +539,6 @@ video {
 
 .hidden {
   display: none;
-}
-
-.w-1\/3 {
-  width: 33.333333%;
-}
-
-.w-1\/5 {
-  width: 20%;
-}
-
-.w-1\/4 {
-  width: 25%;
 }
 
 .w-full {
@@ -585,31 +561,6 @@ video {
   border-width: 2px;
 }
 
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
-
-.p-32 {
-  padding: 8rem;
-}
-
-.p-16 {
-  padding: 4rem;
-}
-
-.p-20 {
-  padding: 5rem;
-}
-
-.p-4 {
-  padding: 1rem;
-}
-
-.p-6 {
-  padding: 1.5rem;
-}
-
 .p-8 {
   padding: 2rem;
 }
@@ -624,20 +575,6 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.py-20 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
-.py-14 {
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
-}
-
-.pt-32 {
-  padding-top: 8rem;
-}
-
 .pt-12 {
   padding-top: 3rem;
 }
@@ -646,12 +583,12 @@ video {
   text-align: center;
 }
 
-.font-LexendDeca {
-  font-family: Lexend Deca, sans-serif;
-}
-
 .font-FiraCode {
   font-family: Fira Code, sans-serif;
+}
+
+.font-LexendDeca {
+  font-family: Lexend Deca, sans-serif;
 }
 
 .text-3xl {
@@ -664,23 +601,8 @@ video {
   line-height: 1.75rem;
 }
 
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
 .font-extrabold {
   font-weight: 800;
-}
-
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .transition-all {
