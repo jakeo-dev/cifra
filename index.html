@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>phone number thing</title>
+    <link href='style.css' rel='stylesheet'>
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Lexend+Deca&display=swap"
+        rel="stylesheet">
+    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/tota11y/0.1.6/tota11y.min.js' crossorigin='anonymous'
+            referrerpolicy='no-referrer'></script> -->
+    <script async src='https://cdn.splitbee.io/sb.js'></script>
+
+</head>
+
+<body class='font-LexendDeca p-20'>
+
+    <h1 class='text-4xl font-extrabold flex justify-center items-center'>Word Phone Number Generator</h1>
+
+    <div class='flex justify-center items-center mt-14'>
+        <input id='input'
+            class='text-xl w-1/4 border-2 rounded-md px-4 py-2 hover:bg-gray-100 focus:bg-gray-200 transition-all'
+            placeholder='Enter a phone number...' type='number'>
+        <button onclick='enter();'
+            class='text-xl border-2 rounded-md px-4 py-2 ml-2 hover:bg-gray-100 active:bg-gray-200 transition-all'>Generate</button>
+    </div>
+
+    <ol id='list' class='hidden text-3xl font-FiraCode text-center justify-center items-center mt-10'>
+        <li id='i0' class='item'></li>
+        <li id='i1' class='item'></li>
+        <li id='i2' class='item'></li>
+        <li id='i3' class='item'></li>
+        <li id='i4' class='item'></li>
+        <li id='i5' class='item'></li>
+        <li id='i6' class='item'></li>
+        <li id='i7' class='item'></li>
+        <li id='i8' class='item'></li>
+        <li id='i9' class='item'></li>
+    </ol>
+
+</body>
+
+</html>
+
+<script src='script.js'></script>
