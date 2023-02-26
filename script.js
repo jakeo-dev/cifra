@@ -89,52 +89,39 @@ function enter() {
 
                     final = document.getElementById('input').value.replace(finalNums, wordArray[k]);
 
-                    b = 0;
 
-                    if (b < 500) { // how many attempts at trying to find matches before giving up
-                        thing = letters.replace(wordArray[k].toUpperCase(), finalNums);
-                        for (o = 0; o < wordArray.length; o++) { // loop through all words to see if the random letters matches any
-                            matches2 = thing.toLowerCase().includes(wordArray[o]);
-                            if (matches2) {
-                                console.log('DOUBLE MATCH!!!!!! with ' + wordArray[o]);
-                                let wordSep = Array.from(wordArray[o]);
+                    thing = letters.replace(wordArray[k].toUpperCase(), finalNums);
+                    for (o = 0; o < wordArray.length; o++) { // loop through all words to see if the random letters matches any
+                        matches2 = thing.toLowerCase().includes(wordArray[o]);
+                        if (matches2) {
+                            let wordSep = Array.from(wordArray[o]);
 
-                                let finalNums = '';
+                            let finalNums = '';
 
-                                for (m = 0; m < wordSep.length; m++) {
-                                    num = getNumber(wordSep[m]);
-                                    finalNums = finalNums + num;
-                                }
+                            for (m = 0; m < wordSep.length; m++) {
+                                num = getNumber(wordSep[m]);
+                                finalNums = finalNums + num;
+                            }
 
-                                n = final.indexOf(finalNums);
+                            n = final.indexOf(finalNums);
 
-                                if (isLetter(final.substring(n + finalNums.length).charAt(0))) {
-                                    final = final.replace(finalNums, wordArray[o] + '-');
+                            // add dashes based on if there is a word next to this second word
 
-                                    console.log(n);
-                                    console.log(n + finalNums.length);
-                                    console.log(final.substring(n + finalNums.length).charAt(0));
-                                    console.log(isLetter(final.substring(n + finalNums.length).charAt(0)));
+                            if (isLetter(final.substring(n + finalNums.length).charAt(0))) {
+                                final = final.replace(finalNums, wordArray[o] + '-');
 
-                                } else if (isLetter(final.substring(n - 1).charAt(0))) {
-                                    final = final.replace(finalNums, '-' + wordArray[o]);
-
-                                    console.log(n);
-                                    console.log(n - 1);
-                                    console.log(final.substring(n - 1).charAt(0));
-                                    console.log(isLetter(final.substring(n - 1).charAt(0)));
-
-                                } else {
-                                    final = final.replace(finalNums, wordArray[o]);
-                                }
-
-                                break;
+                            } else if (isLetter(final.substring(n - 1).charAt(0))) {
+                                final = final.replace(finalNums, '-' + wordArray[o]);
 
                             } else {
-                                b++;
+                                final = final.replace(finalNums, wordArray[o]);
                             }
+
+                            break;
+
                         }
                     }
+
 
                     let finalSep = Array.from(final);
 
@@ -257,3 +244,9 @@ function isLetter(str) {
         return false;
     }
 }
+
+document.getElementById('input').addEventListener('keypress', function (event) {
+    if (event.key === 'Enter' && document.getElementById('input') === document.activeElement) {
+        document.getElementById('generate').click();
+    }
+});
