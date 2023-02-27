@@ -1,11 +1,8 @@
-let wordList;
-let wordArray;
-
 window.onload = readN;
 
 function readN() {
     var txtFile = new XMLHttpRequest();
-    txtFile.open('GET', 'http://localhost:5500/words.txt', true);
+    txtFile.open('GET', '/words.txt', true);
     txtFile.onreadystatechange = function () {
         if (txtFile.readyState === 4) {
             // Makes sure the document is ready to parse.
@@ -14,6 +11,8 @@ function readN() {
                 wordList = txtFile.responseText;
                 wordArray = wordList.split('\n');
             }
+
+
         }
     }
     txtFile.send(null);
@@ -83,6 +82,10 @@ function enter() {
         for (i = 0; i < 10; i++) { // number of phone numbers to output
             if (a < 500) { // how many attempts at trying to find matches before giving up
                 let letters = genLetters(inp);
+
+                console.log(wordList)
+                console.log(wordArray)
+                console.log(wordArray.length)
 
                 for (k = 0; k < wordArray.length; k++) { // loop through all words to see if the random letters matches any
                     matches = letters.toLowerCase().includes(wordArray[k]);
