@@ -11,8 +11,6 @@ function readN() {
                 wordList = txtFile.responseText;
                 wordArray = wordList.split('\n');
             }
-
-
         }
     }
     txtFile.send(null);
@@ -82,10 +80,6 @@ function enter() {
         for (i = 0; i < 10; i++) { // number of phone numbers to output
             if (a < 500) { // how many attempts at trying to find matches before giving up
                 let letters = genLetters(inp);
-
-                console.log(wordList)
-                console.log(wordArray)
-                console.log(wordArray.length)
 
                 for (k = 0; k < wordArray.length; k++) { // loop through all words to see if the random letters matches any
                     matches = letters.toLowerCase().includes(wordArray[k]);
@@ -162,7 +156,7 @@ function enter() {
                 for (l = 1; l < 10; l++) {
                     document.getElementById('i' + l).innerText = '';
                 }
-                document.getElementById('i0').innerText = 'Unable to find any matches';
+                document.getElementById('i0').innerText = 'Unable to find any matches\n\nTry generating again';
             }
         }
 
