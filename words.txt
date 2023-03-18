@@ -7951,7 +7951,6 @@ croissant
 crookedly
 croqueted
 croquette
-cross-bun
 crossbars
 crossbows
 crossbred
@@ -15160,7 +15159,6 @@ bulwarks
 bumblers
 bumbling
 bumpiest
-bumpkins
 bunching
 bundling
 bungalow
@@ -16971,7 +16969,6 @@ ethiopia
 ethnical
 ethology
 ethylene
-eugenics
 eulogies
 eulogise
 euphoria
@@ -24515,7 +24512,6 @@ bumbles
 bumpers
 bumpier
 bumping
-bumpkin
 bunched
 bunches
 bundled
@@ -26233,7 +26229,6 @@ etching
 eternal
 ethanol
 ethical
-eugenic
 eunuchs
 euphony
 eurasia
@@ -39522,7 +39517,6 @@ yeomen
 yields
 yippee
 yodels
-yokels
 yonder
 yorker
 youths
@@ -43771,7 +43765,6 @@ yetis
 yield
 yodel
 yoked
-yokel
 yokes
 yolks
 young
@@ -44386,7 +44379,6 @@ errs
 erst
 esau
 espy
-etal
 etch
 etna
 etui
@@ -46085,7 +46077,6 @@ aid
 ail
 aim
 air
-ala
 alb
 ale
 all

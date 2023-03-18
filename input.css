@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-.item {
-  @apply block mb-6;
+@layer components {
+  .item {
+    @apply block hover:text-yellow-600 active:text-yellow-700 mb-6 transition-all cursor-pointer;
+  }
+
+  .savedNum {
+    @apply decoration-2 hover:line-through transition-all cursor-pointer;
+  }
 }

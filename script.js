@@ -66,6 +66,52 @@ let nine = [
     'Z',
 ]
 
+let savedNumsList = [];
+
+if (localStorage.getItem('savedNums') !== '[""]') {
+    savedNumsList = JSON.parse(localStorage.getItem('savedNums'));
+    document.getElementById('slSubtext').classList.add('hidden');
+
+    for (let i = 0; i < savedNumsList.length; i++) {
+        let li = document.createElement('li');
+        li.innerText = savedNumsList[i];
+        li.className = 'savedNum';
+        document.getElementById('savedList').appendChild(li);
+    }
+} else {
+    document.getElementById('slSubtext').classList.remove('hidden');
+}
+
+document.querySelectorAll('.item').forEach(function (element) {
+    element.addEventListener('click', function (event) {
+        savedNumsList.push(event.target.innerText);
+        localStorage.setItem('savedNums', JSON.stringify(savedNumsList));
+        document.getElementById('slSubtext').classList.add('hidden');
+
+        let li = document.createElement('li');
+        li.innerText = event.target.innerText;
+        li.className = 'savedNum';
+        document.getElementById('savedList').appendChild(li);
+
+        alert('Saved number: ' + event.target.innerText);
+    });
+});
+
+document.getElementById('openSavedBtn').addEventListener('click', function (event) {
+    document.getElementById('savedListDiv').classList.toggle('hidden');
+});
+
+document.getElementById('savedListDiv').addEventListener('click', function (event) {
+    if (event.target.classList.contains('savedNum')) {
+        event.target.remove();
+        localStorage.setItem('savedNums', JSON.stringify(document.getElementById('savedList').innerText.split('\n')));
+
+        if (localStorage.getItem('savedNums') == '[""]') {
+            document.getElementById('slSubtext').classList.remove('hidden');
+        }
+    }
+}, false);
+
 function enter() {
     let inp = document.getElementById('input').value.replace(/\D/g, '');
 
@@ -96,7 +142,7 @@ function enter() {
                         final = inp.replace(finalNums, wordArray[k]);
 
                         thing = letters.replace(wordArray[k].toUpperCase(), finalNums);
-                        for (o = 0; o < wordArray.length; o++) { // loop through all words to see if the random letters matches any
+                        for (o = 0; o < wordArray.length; o++) { // loop through all words a SECOND TIME to see if the random letters matches any
                             matches2 = thing.toLowerCase().includes(wordArray[o]);
                             if (matches2) {
                                 let wordSep = Array.from(wordArray[o]);
