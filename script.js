@@ -68,7 +68,9 @@ let nine = [
 
 let savedNumsList = [];
 
-if (localStorage.getItem('savedNums') !== '[""]' || localStorage.getItem('savedNums') !== null || localStorage.getItem('savedNums') !== undefined) {
+if (localStorage.getItem('savedNums') !== '[""]' && localStorage.getItem('savedNums') !== null && localStorage.getItem('savedNums') !== undefined) {
+    console.log(localStorage.getItem('savedNums'));
+
     savedNumsList = JSON.parse(localStorage.getItem('savedNums'));
     document.getElementById('slSubtext').classList.add('hidden');
 
