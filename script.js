@@ -68,7 +68,7 @@ let nine = [
 
 let savedNumsList = [];
 
-if (localStorage.getItem('savedNums') !== '[""]') {
+if (localStorage.getItem('savedNums') !== '[""]' || localStorage.getItem('savedNums') !== null || localStorage.getItem('savedNums') !== undefined) {
     savedNumsList = JSON.parse(localStorage.getItem('savedNums'));
     document.getElementById('slSubtext').classList.add('hidden');
 
@@ -106,7 +106,7 @@ document.getElementById('savedListDiv').addEventListener('click', function (even
         event.target.remove();
         localStorage.setItem('savedNums', JSON.stringify(document.getElementById('savedList').innerText.split('\n')));
 
-        if (localStorage.getItem('savedNums') == '[""]') {
+        if (localStorage.getItem('savedNums') == '[""]' || localStorage.getItem('savedNums') == null || localStorage.getItem('savedNums') == undefined) {
             document.getElementById('slSubtext').classList.remove('hidden');
         }
     }
