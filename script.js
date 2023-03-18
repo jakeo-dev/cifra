@@ -69,8 +69,6 @@ let nine = [
 let savedNumsList = [];
 
 if (localStorage.getItem('savedNums') !== '[""]' && localStorage.getItem('savedNums') !== null && localStorage.getItem('savedNums') !== undefined) {
-    console.log(localStorage.getItem('savedNums'));
-
     savedNumsList = JSON.parse(localStorage.getItem('savedNums'));
     document.getElementById('slSubtext').classList.add('hidden');
 
@@ -122,6 +120,8 @@ function enter() {
     } else if (inp.length > 20) {
         alert('Phone number is too long.');
     } else {
+
+        let currentNumsList = [];
 
         a = 0;
 
@@ -175,7 +175,6 @@ function enter() {
                             }
                         }
 
-
                         let finalSep = Array.from(final);
 
                         for (m = 0; m < finalSep.length; m++) { // add dashes
@@ -187,6 +186,7 @@ function enter() {
                         }
 
                         document.getElementById('i' + i).innerText = finalSep.join('').toUpperCase();
+                        currentNumsList.push(finalSep.join('').toUpperCase());
 
                         break;
                     }
@@ -198,13 +198,16 @@ function enter() {
                     a++;
                 }
 
+                document.getElementById('errorText').classList.add('hidden');
+
             } else {
                 i = 10;
 
-                for (l = 1; l < 10; l++) {
+                for (l = 0; l < 10; l++) {
                     document.getElementById('i' + l).innerText = '';
                 }
-                document.getElementById('i0').innerText = 'Unable to find any matches\n\nTry generating again';
+                document.getElementById('errorText').innerText = 'Unable to find any matches\n\nTry generating again';
+                document.getElementById('errorText').classList.remove('hidden');
             }
         }
 
