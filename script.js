@@ -93,7 +93,7 @@ document.querySelectorAll('.item').forEach(function (element) {
         li.className = 'savedNum';
         document.getElementById('savedList').appendChild(li);
 
-        alert('Saved number: ' + event.target.innerText);
+        alert('Favorited number: ' + event.target.innerText + '\n\nView all favorited numbers by clicking the star icon');
     });
 });
 
@@ -198,7 +198,7 @@ function enter() {
                     a++;
                 }
 
-                document.getElementById('errorText').classList.add('hidden');
+                document.getElementById('errorText').innerText = '';
 
             } else {
                 i = 10;
@@ -207,7 +207,6 @@ function enter() {
                     document.getElementById('i' + l).innerText = '';
                 }
                 document.getElementById('errorText').innerText = 'Unable to find any matches\n\nTry generating again';
-                document.getElementById('errorText').classList.remove('hidden');
             }
         }
 
