@@ -873,7 +873,6 @@ circuitous
 circularly
 circulated
 circulates
-circumcise
 circumflex
 circumvent
 civilising
@@ -3205,7 +3204,6 @@ lengthiest
 lengthways
 lengthwise
 leprechaun
-lesbianism
 letterhead
 levitating
 levitation
@@ -3348,7 +3346,6 @@ marsupials
 martingale
 marvelling
 marvellous
-masochists
 masquerade
 massacring
 mastectomy
@@ -10078,7 +10075,6 @@ iterators
 itinerant
 itinerary
 jabbering
-jackasses
 jackboots
 jadedness
 jaundiced
@@ -10431,8 +10427,6 @@ marsupial
 martyrdom
 marvelled
 masculine
-masochism
-masochist
 massacred
 massacres
 massaging
@@ -11610,8 +11604,6 @@ proscribe
 prosecute
 prospects
 prospered
-prostates
-prostatic
 prostrate
 protected
 protector
@@ -15546,8 +15538,6 @@ clinical
 clinking
 clippers
 clipping
-clitoral
-clitoris
 cloaking
 clocking
 clogging
@@ -18691,7 +18681,6 @@ leniency
 leonardo
 leopards
 leotards
-lesbians
 lessened
 lethally
 lethargy
@@ -19595,7 +19584,6 @@ organism
 organist
 oriental
 oriented
-orifices
 original
 ornament
 ornately
@@ -20304,7 +20292,6 @@ prosaist
 prosodic
 prospect
 prospers
-prostate
 protease
 protects
 protegee
@@ -20411,7 +20398,6 @@ quashing
 quatrain
 quavered
 quayside
-queerest
 quelling
 quenched
 quencher
@@ -22225,7 +22211,6 @@ switcher
 switches
 swooning
 swooping
-swopping
 swotting
 sycamore
 syllabic
@@ -24534,7 +24519,6 @@ butlers
 butters
 buttery
 butting
-buttock
 buttons
 buzzard
 buzzers
@@ -27713,7 +27697,6 @@ ivories
 jabbers
 jabbing
 jackals
-jackass
 jackdaw
 jackets
 jacking
@@ -28038,7 +28021,6 @@ leprose
 leprosy
 leprous
 leptons
-lesbian
 lesions
 lesotho
 lessees
@@ -28937,7 +28919,6 @@ orderly
 ordinal
 organic
 organza
-orifice
 origami
 origins
 orphans
@@ -29702,7 +29683,6 @@ quasars
 quashed
 quavers
 queenly
-queerly
 quelled
 queried
 queries
@@ -29880,7 +29860,6 @@ rectify
 rectors
 rectory
 rectrix
-rectums
 recured
 recures
 recycle
@@ -31427,7 +31406,6 @@ swivels
 swollen
 swooned
 swooped
-swopped
 swotted
 syllabi
 symbols
@@ -34515,7 +34493,6 @@ endows
 endued
 endues
 endure
-enemas
 energy
 enfold
 engage
@@ -34998,8 +34975,7 @@ fuddle
 fudged
 fudges
 fugues
-fuhrer
-fulfil
+fullfil
 fuller
 fumble
 fuming
@@ -35469,7 +35445,6 @@ hiring
 hissed
 hisses
 hither
-hitler
 hiving
 hoards
 hoarse
@@ -37431,9 +37406,7 @@ recoil
 recopy
 record
 recoup
-rectal
 rector
-rectum
 recurs
 redden
 redder
@@ -40446,7 +40419,6 @@ didnt
 diets
 digit
 dikes
-dildo
 dilly
 dimer
 dimes
@@ -40639,7 +40611,6 @@ empty
 enact
 ended
 endow
-enema
 enemy
 enjoy
 ennui
@@ -42329,7 +42300,6 @@ quash
 quasi
 quays
 queen
-queer
 quell
 quern
 query
@@ -42662,7 +42632,6 @@ seers
 seine
 seize
 sells
-semen
 sends
 sense
 seoul
@@ -43129,7 +43098,6 @@ swish
 swiss
 swoon
 swoop
-swops
 sword
 swore
 sworn
@@ -43801,7 +43769,6 @@ anon
 ante
 anti
 ants
-anus
 aped
 apes
 apex
@@ -45655,7 +45622,6 @@ swap
 swat
 sway
 swim
-swop
 swot
 swum
 sync
