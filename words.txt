@@ -777,6 +777,7 @@ cemeteries
 censorious
 censorship
 centennial
+centerfold
 centigrade
 centimetre
 centipedes
@@ -2161,9 +2162,6 @@ fatherhood
 fatherland
 fatherless
 fathomless
-favourable
-favourably
-favourites
 fearlessly
 fearsomely
 feathering
@@ -2355,7 +2353,6 @@ frustrates
 fulfilling
 fulfilment
 fullbodied
-fullcolour
 fulllength
 fulltimers
 fumigating
@@ -2640,8 +2637,6 @@ homozygous
 homunculus
 honeymoons
 honorarium
-honourable
-honourably
 hoodwinked
 hopelessly
 horizontal
@@ -5130,6 +5125,7 @@ situations
 skateboard
 sketchbook
 sketchiest
+skillfully
 skippering
 skirmishes
 skittishly
@@ -5955,7 +5951,6 @@ unfamiliar
 unfastened
 unfathomed
 unfatigued
-unfavoured
 unfeasible
 unfeasibly
 unfeminine
@@ -5979,7 +5974,6 @@ unhampered
 unhappiest
 unheralded
 unhindered
-unhonoured
 unhygienic
 unicameral
 unicyclist
@@ -6087,6 +6081,7 @@ unsharable
 unsheathed
 unshielded
 unsinkable
+unskillful
 unsociable
 unsolvable
 unspecific
@@ -6356,8 +6351,6 @@ zigzagging
 zookeepers
 zoological
 zoologists
-skillfully
-unskillful
 abandoned
 abasement
 abatement
@@ -6744,8 +6737,6 @@ armaments
 armatures
 armchairs
 armistice
-armourers
-armouries
 aromatics
 arranging
 arresting
@@ -6998,6 +6989,7 @@ beginners
 beginning
 begrudged
 beguiling
+behaviors
 behaviour
 beheading
 beholders
@@ -7396,6 +7388,7 @@ censorial
 censoring
 censuring
 centenary
+centering
 centipede
 centrally
 centreing
@@ -7608,6 +7601,10 @@ colonials
 colonised
 colonists
 colonnade
+colorants
+colorings
+colorized
+colorless
 colostomy
 colourant
 colourful
@@ -8317,6 +8314,7 @@ disciples
 disclaims
 disclosed
 discloses
+discolors
 discolour
 discomfit
 discounts
@@ -8329,7 +8327,6 @@ discusses
 disdained
 disembark
 disengage
-disfavour
 disfigure
 disgorged
 disgraced
@@ -8339,7 +8336,6 @@ disguises
 disgusted
 dishcloth
 dishonest
-dishonour
 dishwater
 disinfect
 disinvest
@@ -8740,6 +8736,7 @@ envisages
 enzymatic
 ephemeral
 ephemeris
+epicenter
 epicentre
 epicurean
 epicycles
@@ -8978,8 +8975,9 @@ fatiguing
 fattening
 fatuously
 faultless
-favouring
-favourite
+favorable
+favorably
+favorites
 fawningly
 fearfully
 feathered
@@ -9062,6 +9060,7 @@ flatterer
 flatulent
 flatworms
 flaunting
+flavoring
 flavoured
 fleabites
 fledgling
@@ -9221,6 +9220,7 @@ fugitives
 fulfilled
 fullbacks
 fullblown
+fullcolor
 fullgrown
 fullscale
 fullstops
@@ -9497,6 +9497,7 @@ harangues
 harassers
 harassing
 harbinger
+harboring
 harboured
 hardbacks
 hardboard
@@ -9641,8 +9642,9 @@ homologue
 homophony
 honeycomb
 honeymoon
+honorable
+honorably
 honorific
-honouring
 hooknosed
 hooligans
 hoovering
@@ -9682,7 +9684,10 @@ humankind
 humanness
 humanoids
 humiliate
+humorless
 humouring
+humourist
+humourous
 hunchback
 hundredth
 hungering
@@ -10138,6 +10143,7 @@ knowingly
 knowledge
 knuckling
 labelling
+laborious
 laborious
 labourers
 labouring
@@ -10761,6 +10767,7 @@ neglected
 negligees
 negligent
 negotiate
+neighbors
 neighbour
 nematodes
 neolithic
@@ -12742,11 +12749,11 @@ spineless
 spinnaker
 spinsters
 spiralled
-spiritedl
 spiritual
 spitfires
 spittoons
 splashing
+splendors
 splendour
 splenetic
 splinters
@@ -13402,6 +13409,7 @@ tributary
 trickiest
 trickling
 trickster
+tricolors
 tricolour
 tricycles
 triennial
@@ -13567,6 +13575,7 @@ unexcited
 unexpired
 unfailing
 unfancied
+unfavored
 unfeeling
 unfeigned
 unfitness
@@ -13582,6 +13591,7 @@ unhappier
 unhappily
 unhealthy
 unhelpful
+unhonored
 unhurried
 unicycles
 unifiable
@@ -14450,8 +14460,8 @@ armature
 armbands
 armchair
 armholes
-armoured
-armourer
+armorers
+armories
 aromatic
 arousals
 arousing
@@ -14756,6 +14766,7 @@ begotten
 begrudge
 beguiled
 behaving
+behavior
 beheaded
 behemoth
 beholden
@@ -15326,6 +15337,7 @@ censured
 censures
 censuses
 centaurs
+centered
 centimes
 centring
 centrist
@@ -15635,6 +15647,10 @@ colonial
 colonies
 colonise
 colonist
+colorant
+colorful
+coloring
+colorize
 colossal
 colossus
 columbus
@@ -16372,6 +16388,7 @@ discerns
 disciple
 disclaim
 disclose
+discolor
 discords
 discount
 discover
@@ -16379,10 +16396,12 @@ discreet
 discrete
 diseased
 diseases
+disfavor
 disgorge
 disgrace
 disguise
 disgusts
+dishonor
 disinter
 disjoint
 disjunct
@@ -17120,7 +17139,8 @@ fatigues
 fattened
 fattiest
 faulting
-favoured
+favoring
+favorite
 fearless
 fearsome
 feasible
@@ -17255,6 +17275,7 @@ flattest
 flattish
 flaunted
 flautist
+flavored
 flavours
 flawless
 fleecing
@@ -17873,6 +17894,7 @@ happiest
 harangue
 harassed
 harasses
+harbored
 harbours
 hardback
 hardcore
@@ -18065,7 +18087,7 @@ honestly
 honeybee
 honeydew
 honorary
-honoured
+honoring
 hoodlums
 hoodwink
 hooligan
@@ -18118,6 +18140,7 @@ humility
 hummable
 hummocks
 hummocky
+humoring
 humorist
 humorous
 humoured
@@ -18567,6 +18590,8 @@ knowable
 knuckled
 knuckles
 labelled
+laborers
+laboring
 laboured
 labourer
 laburnum
@@ -19382,6 +19407,7 @@ negation
 negative
 neglects
 negligee
+neighbor
 neighing
 nematode
 neonatal
@@ -21770,6 +21796,7 @@ splashes
 splatter
 splaying
 splendid
+splendor
 splicers
 splicing
 splinted
@@ -22601,6 +22628,7 @@ trickily
 tricking
 trickled
 trickles
+tricolor
 tricycle
 tridents
 triffids
@@ -23760,7 +23788,8 @@ armfuls
 armhole
 armless
 armlets
-armoury
+armored
+armorer
 armpits
 armrest
 arousal
@@ -24068,6 +24097,7 @@ behoved
 behoves
 beijing
 bejewel
+belabor
 belated
 belayed
 belched
@@ -24695,6 +24725,7 @@ cements
 censors
 censure
 centaur
+centers
 centime
 central
 centred
@@ -24985,7 +25016,6 @@ colobus
 cologne
 colonel
 colonic
-coloure
 colours
 coloury
 columns
@@ -26340,7 +26370,7 @@ fatuous
 faucets
 faulted
 faustus
-favours
+favored
 fawning
 fearful
 fearing
@@ -26493,6 +26523,7 @@ flashes
 flatten
 flatter
 flaunts
+flavors
 flavour
 flayers
 flaying
@@ -26726,6 +26757,7 @@ fuelled
 fulcrum
 fulfils
 fullest
+fullfil
 fulling
 fullish
 fulsome
@@ -27191,6 +27223,7 @@ hapless
 happens
 happier
 happily
+harbors
 harbour
 hardens
 hardest
@@ -27374,7 +27407,7 @@ homonym
 honesty
 honeyed
 honking
-honours
+honored
 hoodlum
 hookers
 hooking
@@ -27431,6 +27464,7 @@ humdrum
 humerus
 humming
 hummock
+humored
 humours
 humping
 hunched
@@ -27876,6 +27910,8 @@ kremlin
 krypton
 kwachas
 labials
+labored
+laborer
 labours
 lacings
 lackeys
@@ -30152,7 +30188,6 @@ righten
 righter
 rightly
 rigidly
-rigours
 rimless
 ringers
 ringing
@@ -30267,6 +30302,7 @@ rumania
 rumbled
 rumbles
 rummage
+rumored
 rumours
 rumpled
 runaway
@@ -32843,7 +32879,7 @@ armful
 armies
 arming
 armlet
-armour
+armory
 armpit
 aromas
 around
@@ -33591,6 +33627,7 @@ cement
 censer
 censor
 census
+center
 centre
 cereal
 cerise
@@ -33793,6 +33830,8 @@ collar
 collie
 colons
 colony
+colors
+colory
 colour
 column
 combat
@@ -34687,7 +34726,7 @@ faults
 faulty
 faunal
 faunas
-favour
+favors
 fawned
 faxing
 fealty
@@ -34809,6 +34848,7 @@ flasks
 flatly
 flatus
 flaunt
+flavor
 flawed
 flaxen
 flayed
@@ -34975,7 +35015,6 @@ fuddle
 fudged
 fudges
 fugues
-fullfil
 fuller
 fumble
 fuming
@@ -35333,6 +35372,7 @@ hansom
 happen
 harare
 harass
+harbor
 harden
 harder
 hardly
@@ -35476,7 +35516,7 @@ homing
 honest
 honing
 honors
-honour
+honors
 honshu
 hooded
 hookah
@@ -35533,6 +35573,7 @@ humbug
 humify
 hummed
 hummer
+humors
 humour
 humped
 hunger
@@ -35857,6 +35898,7 @@ labels
 labial
 labile
 labium
+labors
 labour
 laches
 lacier
@@ -37581,7 +37623,7 @@ rifles
 rigged
 rigger
 rights
-rigour
+rigors
 riling
 rimmed
 ringed
@@ -37679,6 +37721,7 @@ rulers
 ruling
 rumbas
 rumble
+rumors
 rumour
 rumple
 rumpus
@@ -39643,6 +39686,7 @@ argus
 arias
 arise
 armed
+armor
 aroma
 arose
 array
@@ -40200,6 +40244,7 @@ coins
 colas
 colds
 colon
+color
 colts
 comas
 combs
@@ -40698,6 +40743,7 @@ fault
 fauna
 fauns
 faust
+favor
 fawns
 faxed
 faxes
@@ -41220,6 +41266,7 @@ honed
 hones
 honey
 honks
+honor
 hoods
 hoofs
 hooks
@@ -41252,6 +41299,7 @@ hullo
 hulls
 human
 humid
+humor
 humps
 humus
 hunch
@@ -41444,6 +41492,7 @@ krill
 kudus
 label
 labia
+labor
 laced
 laces
 lacks
@@ -42444,6 +42493,7 @@ rifts
 right
 rigid
 rigor
+rigor
 riled
 riles
 rills
@@ -42518,6 +42568,7 @@ rules
 rumba
 rumen
 rummy
+rumor
 rumps
 runes
 rungs

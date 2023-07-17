@@ -93,7 +93,7 @@ document.querySelectorAll('.item').forEach(function (element) {
         li.className = 'savedNum';
         document.getElementById('savedList').appendChild(li);
 
-        alert('Favorited number: ' + event.target.innerText + '\n\nView all favorited numbers by clicking the star icon');
+        alert('Starred number: ' + event.target.innerText + '\n\nView all starred numbers by clicking the star icon');
     });
 });
 
