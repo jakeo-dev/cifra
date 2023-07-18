@@ -123,11 +123,15 @@ function enter() {
 
         let currentNumsList = [];
 
+        for (l = 0; l < 10; l++) {
+            document.getElementById('i' + l).innerText = '';
+        }
+
         a = 0;
 
         for (i = 0; i < 10; i++) { // number of phone numbers to output
-            if (a < 500) { // how many attempts at trying to find matches before giving up
-                let letters = genLetters(inp);
+            if (a < 600) { // number of attempts to try to find matches before giving up
+                let letters = getLetters(inp);
 
                 for (k = 0; k < wordArray.length; k++) { // loop through all words to see if the random letters matches any
                     matches = letters.toLowerCase().includes(wordArray[k]);
@@ -158,7 +162,7 @@ function enter() {
 
                                 n = final.indexOf(finalNums);
 
-                                // add dashes based on if there is a word next to this second word
+                                // add dashes if there is a word next to this second word
 
                                 if (isLetter(final.substring(n + finalNums.length).charAt(0))) {
                                     final = final.replace(finalNums, wordArray[o] + '-');
@@ -185,10 +189,21 @@ function enter() {
                             }
                         }
 
-                        document.getElementById('i' + i).innerText = finalSep.join('').toUpperCase();
-                        currentNumsList.push(finalSep.join('').toUpperCase());
+                        finalJoined = finalSep.join('').toUpperCase();
 
-                        break;
+                        let dontAllow = false;
+                        for (var i = 0; i < currentNumsList.length; i++) {
+                            if (finalJoined == currentNumsList[i]) {
+                                dontAllow = true;
+                            }
+                        }
+
+                        if (!dontAllow) {
+                            currentNumsList.push(finalJoined);
+                            document.getElementById('i' + i).innerText = finalJoined;
+
+                            break;
+                        }
                     }
                 }
 
@@ -203,10 +218,11 @@ function enter() {
             } else {
                 i = 10;
 
-                for (l = 0; l < 10; l++) {
-                    document.getElementById('i' + l).innerText = '';
+                if (currentNumsList.length < 1) {
+                    document.getElementById('errorText').innerText = 'Unable to find any matches\n\nTry generating again';
+                } else if (currentNumsList.length < 5) {
+                    document.getElementById('errorText').innerText = 'Try generating again to find more matches';
                 }
-                document.getElementById('errorText').innerText = 'Unable to find any matches\n\nTry generating again';
             }
         }
 
@@ -214,7 +230,7 @@ function enter() {
     }
 }
 
-function genLetters(inp) {
+function getLetters(inp) {
     let inpArr = Array.from(inp);
 
     let randomLetter = '';
