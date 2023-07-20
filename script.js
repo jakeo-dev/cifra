@@ -112,6 +112,11 @@ document.getElementById('savedListDiv').addEventListener('click', function (even
     }
 }, false);
 
+function thing() {
+    document.getElementById('waitText').classList.remove('hidden');
+}
+
+
 function enter() {
     let inp = document.getElementById('input').value.replace(/\D/g, '');
 
@@ -121,17 +126,26 @@ function enter() {
         alert('Phone number is too long.');
     } else {
 
-        let currentNumsList = [];
+        console.time('generated in')
 
-        for (l = 0; l < 10; l++) {
+        let currentNumsList = [];
+        let triedCombos = [];
+
+        for (l = 0; l < 18; l++) {
             document.getElementById('i' + l).innerText = '';
         }
 
         a = 0;
 
-        for (i = 0; i < 10; i++) { // number of phone numbers to output
-            if (a < 600) { // number of attempts to try to find matches before giving up
+        for (i = 0; i < 18; i++) { // maximum number of phone numbers to output
+            if (a < 500) { // number of attempts to try to find matches before giving up
                 let letters = getLetters(inp);
+
+                while (triedCombos.includes(letters)) { // if a letter combo has already been tried, it gets a new combo of letters
+                    letters = getLetters(inp);
+                }
+
+                triedCombos.push(letters);
 
                 for (k = 0; k < wordArray.length; k++) { // loop through all words to see if the random letters matches any
                     matches = letters.toLowerCase().includes(wordArray[k]);
@@ -191,7 +205,7 @@ function enter() {
 
                         finalJoined = finalSep.join('').toUpperCase();
 
-                        let dontAllow = false;
+                        let dontAllow = false; // if a phone number is already in the ones to be shown, it tries again
                         for (var i = 0; i < currentNumsList.length; i++) {
                             if (finalJoined == currentNumsList[i]) {
                                 dontAllow = true;
@@ -213,22 +227,25 @@ function enter() {
                     a++;
                 }
 
-                document.getElementById('errorText').innerText = '';
+                document.getElementById('noMatchesText').innerText = '';
+                document.getElementById('fewMatchesText').innerText = '';
 
             } else {
-                i = 10;
+                i = 18;
 
                 if (currentNumsList.length < 1) {
-                    document.getElementById('errorText').innerText = 'Unable to find any matches\n\nTry generating again';
-                } else if (currentNumsList.length < 5) {
-                    document.getElementById('errorText').innerText = 'Try generating again to find more matches';
+                    document.getElementById('noMatchesText').innerText = 'Unable to find any matches\n\nTry generating again';
+                } else if (currentNumsList.length < 12) {
+                    document.getElementById('fewMatchesText').innerText = 'Try generating again to find more matches';
                 }
             }
         }
 
-        document.getElementById('list').classList.remove('hidden');
+        console.timeEnd('generated in')
+
     }
 }
+
 
 function getLetters(inp) {
     let inpArr = Array.from(inp);

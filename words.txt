@@ -74,6 +74,7 @@ activation
 activators
 activities
 actualised
+actualized
 adaptation
 adaptively
 adaptivity
@@ -239,8 +240,10 @@ announcing
 annoyances
 annoyingly
 annualised
+annualized
 answerable
 antagonise
+antagonize
 antagonism
 antagonist
 antecedent
@@ -726,7 +729,6 @@ captaining
 captivated
 carbonated
 carbonates
-carbuncles
 carcinogen
 carcinomas
 cardiology
@@ -6617,6 +6619,8 @@ analogous
 analogues
 analysers
 analysing
+analyzers
+analyzing
 anaphoric
 anarchism
 anarchist
@@ -7280,6 +7284,7 @@ cannoning
 canoeists
 canonical
 canonised
+canonized
 canopener
 cantering
 canticles
@@ -7299,7 +7304,7 @@ captivity
 capturing
 carbonate
 carbonise
-carbuncle
+carbonize
 carcasses
 carcinoma
 cardboard
@@ -7367,6 +7372,7 @@ causation
 causative
 causeways
 cauterise
+cauterize
 cautioned
 cavalcade
 cavaliers
@@ -7431,7 +7437,9 @@ chartists
 charwoman
 chastened
 chastised
+chastized
 chastises
+chastizes
 chattered
 chatterer
 chauffeur
@@ -14334,6 +14342,8 @@ analyses
 analysis
 analysts
 analytic
+analyzed
+analyzes
 anaphora
 anarchic
 anathema
@@ -23678,6 +23688,7 @@ anagram
 analogy
 analyse
 analyst
+analyze
 anarchy
 anatomy
 anchors
@@ -32785,7 +32796,6 @@ ampuls
 amulet
 amused
 amuses
-anally
 ananas
 anchor
 andrew
@@ -32884,6 +32894,7 @@ armpit
 aromas
 around
 arouse
+arrack
 arrant
 arrays
 arrest
@@ -40499,6 +40510,7 @@ dodgy
 doers
 doges
 doggy
+dogie
 dogma
 doily
 doing
@@ -43808,13 +43820,10 @@ alts
 alum
 amen
 amid
-amir
 ammo
 amok
 amps
-anal
 anew
-anil
 anna
 anon
 ante
@@ -44245,7 +44254,6 @@ does
 doge
 dogs
 dogy
-dohs
 dole
 doll
 dolt
@@ -44955,6 +44963,7 @@ lynx
 lyon
 lyra
 lyre
+maar
 mace
 made
 magi
@@ -44971,7 +44980,6 @@ mama
 mane
 many
 maps
-mara
 mare
 mark
 marl
@@ -45797,11 +45805,11 @@ trod
 trot
 troy
 true
+tsar
 tuba
 tube
 tubs
 tuck
-tues
 tuft
 tugs
 tuna
@@ -46151,7 +46159,6 @@ dip
 doc
 doe
 dog
-doh
 don
 dot
 dry
@@ -46247,7 +46254,6 @@ her
 hew
 hex
 hey
-hic
 hid
 him
 hip
@@ -46334,7 +46340,6 @@ mag
 man
 map
 mar
-mas
 mat
 maw
 may
@@ -46492,7 +46497,6 @@ sky
 sly
 sob
 sod
-soh
 son
 sop
 sos
