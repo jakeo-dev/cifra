@@ -243,9 +243,9 @@ annualised
 annualized
 answerable
 antagonise
-antagonize
 antagonism
 antagonist
+antagonize
 antecedent
 antedating
 anteriorly
@@ -1295,6 +1295,8 @@ critically
 criticised
 criticises
 criticisms
+criticized
+criticizes
 crocodiles
 croissants
 croqueting
@@ -1338,6 +1340,7 @@ cushioning
 cussedness
 custodians
 customised
+customized
 cuttlefish
 cybernetic
 cyberspace
@@ -1363,6 +1366,7 @@ decapitate
 decelerate
 deceptions
 decimalise
+decimalize
 decimating
 decimation
 decimetres
@@ -1450,6 +1454,7 @@ demolishes
 demolition
 demonology
 demoralise
+demoralize
 demounting
 denaturing
 denigrated
@@ -1460,6 +1465,7 @@ denouncing
 denudation
 deodorants
 deodorised
+deodorized
 department
 departures
 dependable
@@ -1581,6 +1587,8 @@ digestions
 digestives
 digitisers
 digitising
+digitizers
+digitizing
 dignifying
 digressing
 digression
@@ -1764,6 +1772,7 @@ downwardly
 drainpipes
 dramatised
 dramatists
+dramatized
 draughtier
 drawbridge
 dreadfully
@@ -1805,6 +1814,8 @@ economical
 economised
 economises
 economists
+economized
+economizes
 ecosystems
 ecumenical
 editorials
@@ -1870,6 +1881,8 @@ emoluments
 empathetic
 emphasised
 emphasises
+emphasized
+emphasizes
 empiricism
 empiricist
 employable
@@ -1906,6 +1919,7 @@ endowments
 energetics
 energisers
 energising
+energizers
 enervating
 engagement
 engagingly
@@ -1922,7 +1936,7 @@ enormities
 enormously
 enraptured
 enrichment
-enrolments
+enrollment
 enshrining
 enshrouded
 entailment
@@ -1965,9 +1979,13 @@ epithelial
 epithelium
 epitomised
 epitomises
+epitomized
+epitomizes
 equalisers
 equalising
 equalities
+equalizers
+equalizing
 equanimity
 equatorial
 equestrian
@@ -2012,6 +2030,7 @@ evanescent
 evangelise
 evangelism
 evangelist
+evangelize
 evaporated
 evaporates
 evaporator
@@ -2139,6 +2158,8 @@ factitious
 factorials
 factorised
 factorises
+factorized
+factorizes
 fairground
 faithfully
 fallacious
@@ -2182,9 +2203,13 @@ fermenting
 fertilised
 fertiliser
 fertilises
+fertilized
+fertilizer
+fertilizes
 festooning
-fetishists
 feverishly
+fiberboard
+fiberglass
 fibreboard
 fibreglass
 fibroblast
@@ -2286,6 +2311,8 @@ forgivable
 formalised
 formalises
 formalisms
+formalized
+formalizes
 formations
 formatting
 formidable
@@ -2304,6 +2331,9 @@ fortresses
 fortuitous
 forwarding
 fossilised
+fossilises
+fossilized
+fossilizes
 foundation
 foundering
 fourteenth
@@ -2320,7 +2350,7 @@ franchisor
 frangipani
 fraternise
 fraternity
-fratricide
+fraternize
 fraudsters
 fraudulent
 freeforall
@@ -2372,6 +2402,7 @@ furthering
 futuristic
 gainsaying
 galvanised
+galvanized
 gambolling
 gamekeeper
 ganglionic
@@ -2391,6 +2422,7 @@ genderless
 generalise
 generalist
 generality
+generalize
 generating
 generation
 generative
@@ -2551,6 +2583,7 @@ harlequins
 harmlessly
 harmonious
 harmonised
+harmonized
 harnessing
 harvesters
 harvesting
@@ -2631,6 +2664,7 @@ homeliness
 homeowners
 homesteads
 homogenise
+homogenize
 homologies
 homologous
 homologues
@@ -2676,6 +2710,7 @@ hurricanes
 husbandman
 husbandmen
 hybridised
+hybridized
 hydrangeas
 hydraulics
 hydrofoils
@@ -2693,6 +2728,8 @@ hyphenated
 hyphenates
 hypnotised
 hypnotises
+hypnotized
+hypnotizes
 hypocrites
 hypodermic
 hypotheses
@@ -2745,6 +2782,7 @@ imminently
 immiscible
 immobilise
 immobility
+immobilize
 immoderate
 immolation
 immorality
@@ -2930,6 +2968,7 @@ inimitably
 iniquities
 iniquitous
 initialise
+initialize
 initialled
 initiating
 initiation
@@ -3099,12 +3138,14 @@ irritation
 isomorphic
 isothermal
 italicised
+italicized
 iterations
 itinerants
 jackbooted
 jaywalking
 jealousies
 jeopardise
+jeopardize
 jetsetting
 jettisoned
 jingoistic
@@ -3193,6 +3234,7 @@ legislator
 legitimacy
 legitimate
 legitimise
+legitimize
 leguminous
 leitmotifs
 leitmotivs
@@ -3207,6 +3249,7 @@ levitation
 liberalise
 liberalism
 liberality
+liberalize
 liberating
 liberation
 liberators
@@ -3234,6 +3277,7 @@ limitation
 limousines
 lineaments
 linearised
+linearized
 linguistic
 lipreading
 lipservice
@@ -3241,6 +3285,8 @@ liquidated
 liquidator
 liquidised
 liquidiser
+liquidized
+liquidizer
 lissomness
 listlessly
 literalism
@@ -3297,6 +3343,7 @@ mackintosh
 macrophage
 magistrate
 magnetised
+magnetized
 magnifying
 magnitudes
 mainframes
@@ -3370,6 +3417,7 @@ measurably
 mechanical
 mechanised
 mechanisms
+mechanized
 medallions
 medallists
 meddlesome
@@ -3395,12 +3443,15 @@ mercantile
 mercifully
 meridional
 mesmerised
+mesmerized
 mesolithic
 mesosphere
 messengers
 metabolise
 metabolism
+metabolize
 metallised
+metallized
 metallurgy
 metaphoric
 metastable
@@ -3514,13 +3565,16 @@ moderation
 moderators
 modernised
 modernists
+modernized
 modifiable
 modularise
 modularity
+modularize
 modulating
 modulation
 moistening
 moisturise
+moisturize
 molarities
 molybdenum
 monarchies
@@ -3539,6 +3593,7 @@ monophonic
 monopolies
 monopolise
 monopolist
+monopolize
 monostable
 monotheism
 monotheist
@@ -6042,6 +6097,7 @@ unraisable
 unravelled
 unreadable
 unrealised
+unrealized
 unreasoned
 unreceived
 unrecorded
@@ -6138,12 +6194,14 @@ validation
 valuations
 valueadded
 vandalised
+vandalized
 vanquished
 vaporising
 variations
 variegated
 varnishing
 vectorised
+vectorized
 vegetables
 vegetarian
 vegetating
@@ -6171,6 +6229,8 @@ vibrations
 vicinities
 victimised
 victimises
+victimized
+victimizes
 victimless
 victorious
 videophone
@@ -6193,6 +6253,7 @@ virulently
 visibility
 visitation
 visualised
+visualized
 vituperate
 vivisected
 vocabulary
@@ -6208,6 +6269,7 @@ volunteers
 voluptuous
 vouchsafed
 vulcanised
+vulcanized
 vulnerable
 waistcoats
 waitresses
@@ -6438,6 +6500,7 @@ activists
 actresses
 actualise
 actuality
+actualize
 actuarial
 actuaries
 actuating
@@ -6599,6 +6662,7 @@ amorality
 amorously
 amorphous
 amortised
+amortized
 amounting
 ampersand
 amphibian
@@ -6615,6 +6679,7 @@ analgesia
 analgesic
 analogies
 analogise
+analogize
 analogous
 analogues
 analysers
@@ -6687,6 +6752,7 @@ aphorisms
 apologies
 apologise
 apologist
+apologize
 apostates
 apostolic
 appalling
@@ -6846,6 +6912,7 @@ authorial
 authoring
 authorise
 authority
+authorize
 autobahns
 autocracy
 autocrats
@@ -7214,6 +7281,7 @@ brusquely
 brutalise
 brutalism
 brutality
+brutalize
 bubblegum
 bubbliest
 buccaneer
@@ -7437,8 +7505,8 @@ chartists
 charwoman
 chastened
 chastised
-chastized
 chastises
+chastized
 chastizes
 chattered
 chatterer
@@ -7505,6 +7573,7 @@ citizenry
 cityscape
 civilians
 civilised
+civilized
 claimable
 claimants
 clambered
@@ -7608,6 +7677,7 @@ collusion
 colonials
 colonised
 colonists
+colonized
 colonnade
 colorants
 colorings
@@ -8709,7 +8779,6 @@ enquiries
 enquiring
 enriching
 enrolling
-enrolment
 ensconced
 ensembles
 enshrined
@@ -8769,7 +8838,6 @@ equitable
 equitably
 equivocal
 eradicate
-erections
 ergonomic
 erogenous
 erosional
@@ -9009,8 +9077,6 @@ festering
 festivals
 festivity
 festooned
-fetishism
-fetishist
 feudalism
 fictional
 fiddlings
@@ -9400,6 +9466,7 @@ graveyard
 gravitate
 gravities
 gravitons
+graybeard
 greasiest
 greataunt
 greatcoat
@@ -9644,8 +9711,6 @@ homelands
 homeowner
 homestead
 homewards
-homicidal
-homicides
 homologue
 homophony
 honeycomb
@@ -11062,7 +11127,6 @@ overviews
 overwhelm
 overwrite
 overwrote
-ovulation
 ownership
 oxidation
 oxidising
@@ -16029,6 +16093,7 @@ cupboard
 cupidity
 curative
 curators
+curbside
 curdling
 curliest
 currants
@@ -16922,9 +16987,6 @@ equipped
 equities
 erasable
 erasures
-erectile
-erecting
-erection
 erosions
 erupting
 eruption
@@ -17187,7 +17249,6 @@ festered
 festival
 festoons
 fetching
-fetishes
 fetlocks
 fettered
 feverish
@@ -17750,6 +17811,7 @@ gravelly
 gravitas
 graviton
 gravures
+grayness
 greasers
 greasier
 greasing
@@ -18087,7 +18149,6 @@ homesick
 homespun
 homeward
 homework
-homicide
 homilies
 hominids
 homology
@@ -18551,7 +18612,6 @@ keelhaul
 keenness
 keepsake
 kentucky
-kerbside
 kerchief
 kerosene
 kestrels
@@ -20546,6 +20606,8 @@ realigns
 realised
 realises
 realists
+realized
+realizes
 reallife
 realness
 reappear
@@ -20663,7 +20725,6 @@ regality
 regarded
 regattas
 regelate
-regicide
 regimens
 regiment
 regional
@@ -22134,8 +22195,6 @@ suffused
 suffuses
 sugaring
 suggests
-suicidal
-suicides
 suitable
 suitably
 suitcase
@@ -26184,9 +26243,6 @@ equinox
 erasers
 erasing
 erasure
-erected
-erecter
-erectly
 ergodic
 eritrea
 eroding
@@ -27060,6 +27116,9 @@ gravely
 gravest
 gravies
 gravity
+grayest
+graying
+grayish
 grazing
 greased
 greases
@@ -29864,6 +29923,7 @@ realise
 realism
 realist
 reality
+realize
 reapers
 reaping
 reapply
@@ -31356,7 +31416,6 @@ suffice
 suffuse
 sugared
 suggest
-suicide
 suiting
 suitors
 sulkier
@@ -34560,7 +34619,6 @@ enrage
 enrich
 enrobe
 enroll
-enrols
 ensign
 ensued
 ensues
@@ -34590,7 +34648,6 @@ erased
 eraser
 erases
 erbium
-erects
 ericas
 ermine
 eroded
@@ -34771,7 +34828,6 @@ fervid
 fescue
 festal
 fester
-fetish
 fetter
 fettle
 feudal
@@ -34783,7 +34839,7 @@ fiasco
 fibbed
 fibber
 fibers
-fibred
+fibers
 fibres
 fibula
 fiches
@@ -35266,6 +35322,8 @@ gravel
 graven
 graver
 graves
+grayed
+grayer
 grazed
 grazer
 grazes
@@ -36798,7 +36856,6 @@ outset
 outwit
 overdo
 overly
-ovular
 owlets
 owlish
 owners
@@ -38746,7 +38803,6 @@ thirds
 thirst
 thirty
 thomas
-thongs
 thorax
 thorns
 thorny
@@ -39534,7 +39590,6 @@ abide
 abies
 abler
 abode
-abomb
 abort
 about
 above
@@ -40671,7 +40726,6 @@ endow
 enemy
 enjoy
 ennui
-enrol
 ensue
 enter
 entry
@@ -40684,7 +40738,6 @@ epoxy
 equal
 equip
 erase
-erect
 ergot
 erica
 erode
@@ -40785,6 +40838,7 @@ fetus
 feuds
 fever
 fewer
+fiber
 fibre
 fiche
 ficus
@@ -41102,6 +41156,7 @@ grass
 grate
 grave
 gravy
+grays
 graze
 great
 greed
@@ -41274,6 +41329,7 @@ holes
 holly
 homed
 homes
+homey
 honed
 hones
 honey
@@ -41459,7 +41515,6 @@ keels
 keeps
 kelts
 kenya
-kerbs
 ketch
 keyed
 khaki
@@ -41555,7 +41610,6 @@ leafy
 leaks
 leaky
 leans
-leant
 leaps
 leapt
 learn
@@ -43265,7 +43319,6 @@ thing
 think
 thins
 third
-thong
 thorn
 those
 three
@@ -43832,7 +43885,6 @@ ants
 aped
 apes
 apex
-apis
 apse
 aqua
 arab
@@ -43960,7 +44012,6 @@ blot
 blow
 blue
 blur
-bmus
 boar
 boas
 boat
@@ -44140,12 +44191,12 @@ core
 cork
 corn
 cost
-cosy
 cots
 coup
 cove
 cowl
 cows
+cozy
 crab
 crag
 cram
@@ -44333,7 +44384,6 @@ eery
 eggs
 eire
 eked
-elal
 elan
 elbe
 elks
@@ -44500,7 +44550,6 @@ gals
 game
 gamy
 gang
-gaol
 gape
 gaps
 garb
@@ -44566,6 +44615,7 @@ gout
 gown
 grab
 gram
+gray
 grew
 grey
 grid
@@ -44666,7 +44716,6 @@ hold
 hole
 holy
 home
-homy
 hone
 honk
 hood
@@ -44793,7 +44842,6 @@ kelp
 kelt
 kent
 kept
-kerb
 keys
 khan
 kick
@@ -45181,7 +45229,6 @@ outs
 oval
 oven
 over
-ovum
 owed
 owes
 owls
@@ -46395,9 +46442,7 @@ opt
 orb
 ore
 our
-out
-ova
-owe
+outowe
 owl
 own
 pad
@@ -46457,7 +46502,6 @@ rob
 roc
 rod
 roe
-rom
 roo
 rot
 row

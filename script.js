@@ -112,11 +112,6 @@ document.getElementById('savedListDiv').addEventListener('click', function (even
     }
 }, false);
 
-function thing() {
-    document.getElementById('waitText').classList.remove('hidden');
-}
-
-
 function enter() {
     let inp = document.getElementById('input').value.replace(/\D/g, '');
 
@@ -141,8 +136,11 @@ function enter() {
             if (a < 500) { // number of attempts to try to find matches before giving up
                 let letters = getLetters(inp);
 
+                w = 0;
                 while (triedCombos.includes(letters)) { // if a letter combo has already been tried, it gets a new combo of letters
                     letters = getLetters(inp);
+                    if (w > 500) break; // prevent short numbers from ntering an infinite loop, unable to make different letter combos (ex. 127 only has 12 combos, none of which contain a word)
+                    w++;
                 }
 
                 triedCombos.push(letters);
@@ -331,6 +329,10 @@ function isLetter(str) {
     } else {
         return false;
     }
+}
+
+function randomNum() {
+    document.getElementById('input').value = Math.floor(Math.random() * 10000000000);
 }
 
 document.getElementById('input').addEventListener('keypress', function (event) {
