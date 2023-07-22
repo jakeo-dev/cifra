@@ -112,6 +112,9 @@ document.getElementById('savedListDiv').addEventListener('click', function (even
     }
 }, false);
 
+//let strStr = '';
+//let lalala = 0;
+
 function enter() {
     let inp = document.getElementById('input').value.replace(/\D/g, '');
 
@@ -121,7 +124,7 @@ function enter() {
         alert('Phone number is too long.');
     } else {
 
-        console.time('generated in')
+        const start = performance.now();
 
         let currentNumsList = [];
         let triedCombos = [];
@@ -139,7 +142,7 @@ function enter() {
                 w = 0;
                 while (triedCombos.includes(letters)) { // if a letter combo has already been tried, it gets a new combo of letters
                     letters = getLetters(inp);
-                    if (w > 500) break; // prevent short numbers from ntering an infinite loop, unable to make different letter combos (ex. 127 only has 12 combos, none of which contain a word)
+                    if (w > 18) break; // prevent short numbers that are unable to make different letter combos from entering an infinite loop (ex. 127 only has 12 combos, none of which contain a word)
                     w++;
                 }
 
@@ -239,10 +242,24 @@ function enter() {
             }
         }
 
-        console.timeEnd('generated in')
+        const end = performance.now();
+        time = (end - start).toFixed(2);
+        console.log(time);
+        //lalala++;
+
+        //strStr = strStr + ', ' + time;
+        //console.log(strStr);
+        //console.log(lalala);
 
     }
 }
+
+/* function doItNow() {
+    setInterval(function () {
+        randomNum()
+        enter();
+    }, 3000)
+} */
 
 
 function getLetters(inp) {

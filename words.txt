@@ -34839,7 +34839,6 @@ fiasco
 fibbed
 fibber
 fibers
-fibers
 fibres
 fibula
 fiches
@@ -45739,6 +45738,7 @@ tags
 tahr
 tail
 take
+tala
 talc
 tale
 talk
@@ -46358,7 +46358,6 @@ lad
 lag
 lam
 lap
-las
 law
 lax
 lay
@@ -46442,7 +46441,8 @@ opt
 orb
 ore
 our
-outowe
+out
+owe
 owl
 own
 pad
