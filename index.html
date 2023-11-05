@@ -4,7 +4,7 @@
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Cifra</title>
+    <title>Cifra: Vanity Phone Number Generator</title>
     <link href='style.css' rel='stylesheet'>
     <link rel='preconnect' href='https://fonts.googleapis.com'>
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
@@ -17,9 +17,13 @@
         referrerpolicy='no-referrer'></script> -->
     <script async src='https://cdn.splitbee.io/sb.js'></script>
 
+    <meta property='og:title' content='Cifra: Vanity Phone Number Generator'>
+    <meta property='og:description'
+        content='Discover hidden words in your phone number to make it fun and unforgettable.'>
+    <meta name='theme-color' content='#a0a8ad'>
 </head>
 
-<body class='font-LexendDeca px-8 pt-12 pb-32 md:px-12 lg:px-20 xl:px-56 2xl:px-80 md:pt-16 md:pb-40'>
+<body class='font-LexendDeca px-8 pt-12 pb-32 md:pt-16 md:pb-40'>
 
     <!-- <button onclick='localStorage.clear()' class='text-3xl border-4 border-red-500 hover:bg-red-300'>CLEAR
         EVERYTHING</button> -->
@@ -44,20 +48,20 @@
         <h2 class='text-xl mt-2.5'>Vanity Phone Number Generator</h2>
     </div>
 
-    <div class='block md:flex justify-center items-center mt-8 md:mt-14'>
+    <div class='block sm:flex justify-center max-w-xl mx-auto mt-8 md:mt-14'>
         <input id='input'
-            class='text-xl w-full md:w-1/3 border-2 rounded-md px-4 py-2 hover:bg-gray-100 focus:bg-gray-200 transition-all'
-            placeholder='Enter a phone number...' type='tel'>
+            class='text-xl w-full sm:w-auto border-2 rounded-md px-4 py-2 hover:bg-gray-100 focus:bg-gray-200 transition-all'
+            placeholder='Enter a phone number...' autocomplete='off' type='tel'>
         <button onclick='enter()' id='generate'
-            class='text-xl border-2 rounded-md px-4 py-2 mt-2 md:mt-0 md:ml-2 hover:bg-gray-100 active:bg-gray-200 transition-all'>Generate<i
+            class='block sm:inline-block text-xl border-2 rounded-md px-4 py-2 mt-2 sm:mt-0 sm:ml-2 hover:bg-gray-100 active:bg-gray-200 transition-all'>Generate<i
                 class='fa-solid fa-rotate-right ml-2'></i></button>
     </div>
-    <h2 id='warningText' class='font-FiraCode text-center mt-1' for='input'>May take up to 5 seconds</h2>
+    <!-- <h2 id='warningText' class='font-FiraCode text-center mt-1' for='input'>May take up to 5 seconds</h2> -->
 
     <h2 id='noMatchesText' class='text-3xl font-FiraCode text-center mt-10'></h2>
 
     <div
-        class='flex-1 grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-3xl font-FiraCode text-center justify-center items-center mt-10'>
+        class='max-w-[60rem] mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-3xl font-FiraCode text-center justify-center items-center mt-10'>
         <li id='i0' class='item'></li>
         <li id='i1' class='item'></li>
         <li id='i2' class='item'></li>

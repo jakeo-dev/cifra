@@ -34,7 +34,6 @@ abstractly
 abstrusely
 abundances
 abundantly
-academical
 accelerate
 accentuate
 acceptable
@@ -955,6 +954,8 @@ colloquial
 colloquium
 colonisers
 colonising
+colonizers
+colonizing
 colonnaded
 colonnades
 colossally
@@ -3148,7 +3149,6 @@ jeopardise
 jeopardize
 jetsetting
 jettisoned
-jingoistic
 jocularity
 journalese
 journalism
@@ -3557,6 +3557,7 @@ mitigating
 mitigation
 mitigatory
 mobilising
+mobilizing
 mobilities
 modalities
 moderately
@@ -7678,6 +7679,7 @@ colonials
 colonised
 colonists
 colonized
+colonizer
 colonnade
 colorants
 colorings
@@ -10678,7 +10680,9 @@ mitigated
 mitigates
 mnemonics
 mobilised
+mobilized
 mobilises
+mobilizes
 moccasins
 mockeries
 mockingly
@@ -15507,7 +15511,6 @@ chilling
 chimaera
 chimeras
 chimneys
-chinking
 chinless
 chipmunk
 chipping
@@ -18565,10 +18568,8 @@ jetplane
 jettison
 jewelled
 jeweller
-jewsharp
 jiggling
 jingling
-jingoism
 jiujitsu
 jointing
 jokingly
@@ -19268,6 +19269,7 @@ mitigate
 mixtures
 mnemonic
 mobilise
+mobilize
 mobility
 mobsters
 moccasin
@@ -24897,7 +24899,6 @@ chimera
 chiming
 chimney
 chinese
-chinked
 chintzy
 chipped
 chirped
@@ -33755,7 +33756,6 @@ chilly
 chimed
 chimes
 chimps
-chinks
 chintz
 chiral
 chirps
@@ -35841,7 +35841,6 @@ jesuit
 jetsam
 jetted
 jewels
-jewess
 jewish
 jiggle
 jigsaw
@@ -40221,7 +40220,6 @@ chill
 chime
 chimp
 china
-chink
 chins
 chips
 chirp
@@ -41476,7 +41474,6 @@ jiffy
 jihad
 jilts
 jimmy
-jingo
 jinks
 jived
 jives
@@ -44610,7 +44607,6 @@ gore
 gory
 gosh
 goth
-gout
 gown
 grab
 gram
@@ -45469,7 +45465,6 @@ roar
 robe
 robs
 rock
-rocs
 rode
 rods
 roes
@@ -46335,7 +46330,6 @@ ivy
 jab
 jag
 jam
-jap
 jar
 jaw
 jay
@@ -46499,7 +46493,6 @@ rig
 rim
 rip
 rob
-roc
 rod
 roe
 roo

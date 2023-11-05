@@ -112,9 +112,6 @@ document.getElementById('savedListDiv').addEventListener('click', function (even
     }
 }, false);
 
-//let strStr = '';
-//let lalala = 0;
-
 function enter() {
     let inp = document.getElementById('input').value.replace(/\D/g, '');
 
@@ -123,7 +120,6 @@ function enter() {
     } else if (inp.length > 20) {
         alert('Phone number is too long.');
     } else {
-
         const start = performance.now();
 
         let currentNumsList = [];
@@ -148,7 +144,7 @@ function enter() {
 
                 triedCombos.push(letters);
 
-                for (k = 0; k < wordArray.length; k++) { // loop through all words to see if the random letters matches any
+                for (k = 0; k < wordArray.length; k++) { // loop through all words to see if any of the random letters match them
                     matches = letters.toLowerCase().includes(wordArray[k]);
                     if (matches) {
                         let wordSep = Array.from(wordArray[k]);
@@ -163,7 +159,7 @@ function enter() {
                         final = inp.replace(finalNums, wordArray[k]);
 
                         thing = letters.replace(wordArray[k].toUpperCase(), finalNums);
-                        for (o = 0; o < wordArray.length; o++) { // loop through all words a SECOND TIME to see if the random letters matches any
+                        for (o = 0; o < wordArray.length; o++) { // loop through all words a SECOND TIME to see if any of the random letters match them
                             matches2 = thing.toLowerCase().includes(wordArray[o]);
                             if (matches2) {
                                 let wordSep = Array.from(wordArray[o]);
@@ -223,7 +219,7 @@ function enter() {
                 }
 
                 if (!matches && i > -1) {
-                    i = i - 1;
+                    i -= 1;
 
                     a++;
                 }
@@ -242,25 +238,31 @@ function enter() {
             }
         }
 
+        //console.log('—————————————————');
+
         const end = performance.now();
         time = (end - start).toFixed(2);
-        console.log(time);
-        //lalala++;
+        console.log(time + ' ms');
 
-        //strStr = strStr + ', ' + time;
-        //console.log(strStr);
-        //console.log(lalala);
-
+        /* lalala++;
+        strStr = strStr + '\n' + time;
+        console.log("ALL TIMES: " + strStr);
+        console.log("NUMBER: " + lalala);
+        console.log("AVERAGE: " + getAverage(strStr.replace('\n', '').split('\n'))); */
     }
 }
 
-/* function doItNow() {
-    setInterval(function () {
-        randomNum()
-        enter();
-    }, 3000)
-} */
+/* let strStr = '';
+let lalala = 0;
 
+setInterval(function () {
+    randomNum();
+    enter();
+}, 2100); */
+
+/* function getAverage(list) {
+    return (list.map(item => Number(item)).reduce((a, b) => a + b) / list.length).toFixed(1);
+} */
 
 function getLetters(inp) {
     let inpArr = Array.from(inp);
