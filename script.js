@@ -140,35 +140,27 @@ function enter() {
 
         for (m = 0; m < wordNumsArray.length; m++) {
             if (inp.includes(wordNumsArray[m])) {
-                // put FIRST word in phone number
-                finalNumb1 = inp.replace(wordNumsArray[m], '-' + wordArray[m] + '-');
+                // put first word in phone number
+                finalNumb = inp.replace(wordNumsArray[m], '-' + wordArray[m] + '-');
 
-                // put SECOND word (if possible) in phone number
-                let secondWordList = [];
-                for (n = 0; n < wordNumsArray.length; n++) {
-                    if (finalNumb1.includes(wordNumsArray[n])) {
-                        secondWordList.push(n);
+                // put up to two (or three if length > 10) more words (if possible)
+                if (inp.length > 15) limit = 5;
+                else if (inp.length > 10) limit = 3;
+                else limit = 2;
+
+                for (x = 0; x < limit; x++) {
+                    let secondWordList = [];
+                    for (n = 0; n < wordNumsArray.length; n++) {
+                        if (finalNumb.includes(wordNumsArray[n])) {
+                            secondWordList.push(n);
+                        }
                     }
+                    randWordIndex = secondWordList[Math.floor(Math.random() * secondWordList.length)];
+                    finalNumb = finalNumb.replace(wordNumsArray[randWordIndex], '-' + wordArray[randWordIndex] + '-');
                 }
-                randomSecondWordIndex = secondWordList[Math.floor(Math.random() * secondWordList.length)];
-                finalNumb1 = finalNumb1.replace(wordNumsArray[randomSecondWordIndex], '-' + wordArray[randomSecondWordIndex] + '-');
 
-                // put THIRD word (if possible) in phone number
-                let thirdWordList = [];
-                for (o = 0; o < wordNumsArray.length; o++) {
-                    if (finalNumb1.includes(wordNumsArray[o])) {
-                        thirdWordList.push(o);
-                    }
-                }
-                randomSecondWordIndex = thirdWordList[Math.floor(Math.random() * thirdWordList.length)];
-                finalNumb1 = finalNumb1.replace(wordNumsArray[randomSecondWordIndex], '-' + wordArray[randomSecondWordIndex] + '-');
-
-                // fix dashes
-                finalNumb2 = finalNumb1.replaceAll('--', '-').toUpperCase();
-                if (finalNumb2.startsWith('-')) finalNumb2 = finalNumb2.substring(1);
-                if (finalNumb2.endsWith('-')) finalNumb2 = finalNumb2.substring(0, finalNumb2.length - 1);
-
-                if (!currentNumsList.includes(finalNumb2)) currentNumsList.push(finalNumb2);
+                // add vanity number to list of numbers
+                if (!currentNumsList.includes(fixDashes(finalNumb))) currentNumsList.push(fixDashes(finalNumb));
             }
         }
 
@@ -187,8 +179,9 @@ function enter() {
         //console.log('—————————————————');
 
         const end = performance.now();
-        time = (end - start).toFixed(2);
+        time = (end - start).toFixed(1);
         console.log(time + ' ms');
+        document.getElementById('generationText').innerText = 'Generated in ' + time + ' ms';
 
         /* lalala++;
         strStr = strStr + '\n' + time;
@@ -294,6 +287,13 @@ function isLetter(str) {
     } else {
         return false;
     }
+}
+
+function fixDashes(unfixed) {
+    fixed = unfixed.replaceAll(/--+/g, '-').toUpperCase();
+    if (fixed.startsWith('-')) fixed = fixed.substring(1);
+    if (fixed.endsWith('-')) fixed = fixed.substring(0, fixed.length - 1);
+    return fixed;
 }
 
 function randomNum() {
