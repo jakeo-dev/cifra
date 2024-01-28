@@ -155,7 +155,7 @@ function enter() {
                 if (finalNumb2.startsWith('-')) finalNumb2 = finalNumb2.substring(1);
                 if (finalNumb2.endsWith('-')) finalNumb2 = finalNumb2.substring(0, finalNumb2.length - 1);
 
-                currentNumsList.push(finalNumb2);
+                if (!currentNumsList.includes(finalNumb2)) currentNumsList.push(finalNumb2);
             }
         }
 

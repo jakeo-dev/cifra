@@ -28828,7 +28828,6 @@ needles
 negated
 negates
 neglect
-negroid
 neighed
 neither
 nemesis
@@ -40325,7 +40324,6 @@ conic
 cooed
 cooks
 cools
-coons
 coops
 coped
 copes
@@ -44176,7 +44174,6 @@ cons
 cony
 cook
 cool
-coon
 coop
 coos
 cope
