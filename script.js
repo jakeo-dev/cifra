@@ -132,48 +132,72 @@ function enter() {
     } else {
         const start = performance.now();
 
-        for (l = 0; l < 18; l++) {
-            document.getElementById('i' + l).innerText = '';
+        for (i = 0; i < document.getElementsByClassName('item').length; i++) {
+            document.getElementById('i' + i).innerText = '';
         }
 
-        let currentNumsList = [];
+        let aNumsList = [];
+        let bNumsList = [];
+        let cNumsList = [];
 
         for (m = 0; m < wordNumsArray.length; m++) {
             if (inp.includes(wordNumsArray[m])) {
                 // put first word in phone number
                 finalNumb = inp.replace(wordNumsArray[m], '-' + wordArray[m] + '-');
+                aNumsList.push(fixDashes(finalNumb));
+            }
+        }
 
-                // put up to two (or three if length > 10) more words (if possible)
-                if (inp.length > 15) limit = 5;
-                else if (inp.length > 10) limit = 3;
-                else limit = 2;
+        if (aNumsList.length > 0 && numOfGoodNums(aNumsList[aNumsList.length - 1]) > 2) {
+            // put second word in phone number (if possible)
+            for (n = 0; n < aNumsList.length; n++) {
+                for (o = 0; o < wordNumsArray.length; o++) {
+                    if (aNumsList[n].includes(wordNumsArray[o])) {
+                        finalNumb = aNumsList[n].replace(wordNumsArray[o], '-' + wordArray[o] + '-');
+                        bNumsList.push(fixDashes(finalNumb));
+                    }
+                }
+            }
 
-                for (x = 0; x < limit; x++) {
-                    let secondWordList = [];
-                    for (n = 0; n < wordNumsArray.length; n++) {
-                        if (finalNumb.includes(wordNumsArray[n])) {
-                            secondWordList.push(n);
+            if (bNumsList.length > 0 && numOfGoodNums(bNumsList[bNumsList.length - 1]) > 2) {
+                // put third word in phone number (if possible)
+                for (p = 0; p < bNumsList.length; p++) {
+                    for (q = 0; q < wordNumsArray.length; q++) {
+                        if (bNumsList[p].includes(wordNumsArray[q])) {
+                            finalNumb = bNumsList[p].replace(wordNumsArray[q], '-' + wordArray[q] + '-');
+                            cNumsList.push(fixDashes(finalNumb));
                         }
                     }
-                    randWordIndex = secondWordList[Math.floor(Math.random() * secondWordList.length)];
-                    finalNumb = finalNumb.replace(wordNumsArray[randWordIndex], '-' + wordArray[randWordIndex] + '-');
                 }
+            }
+        }
 
-                // add vanity number to list of numbers
-                if (!currentNumsList.includes(fixDashes(finalNumb))) currentNumsList.push(fixDashes(finalNumb));
+        allNumsList = removeDuplicates(aNumsList.concat(bNumsList, cNumsList));
+
+        let displayedNumsList = [];
+        let tempItemsList = JSON.parse(JSON.stringify(allNumsList));
+
+        for (i = 0; i < document.getElementsByClassName('item').length; i++) { // display random phone numbers from the ones generated
+            currentItem = tempItemsList[Math.floor(Math.random() * tempItemsList.length)];
+            if (currentItem != undefined) {
+                document.getElementById('i' + i).innerText = currentItem;
+                displayedNumsList.push(currentItem);
+                tempItemsList.splice(tempItemsList.indexOf(currentItem), 1);
             }
         }
 
         document.getElementById('noMatchesText').innerText = '';
-        if (currentNumsList.length < 1) {
+        if (displayedNumsList.length < 1) {
             document.getElementById('noMatchesText').innerText = 'That phone number doesn\'t have any vanity numbers';
         }
 
-        for (i = 0; i < 18; i++) { // display 18 random phone numbers from the ones generated
-            currentItem = currentNumsList[Math.floor(Math.random() * currentNumsList.length)];
-            if (currentItem != undefined) document.getElementById('i' + i).innerText = currentItem;
-            currentNumsList.splice(currentNumsList.indexOf(currentItem), 1);
-
+        document.getElementById('showMoreBtn').classList.add('hidden');
+        document.getElementById('showMoreBtn').classList.remove('flex');
+        document.getElementById('moreNumsList').classList.add('hidden');
+        document.getElementById('moreNumsList').classList.remove('grid');
+        if (displayedNumsList.length > 18) {
+            document.getElementById('showMoreBtn').classList.remove('hidden');
+            document.getElementById('showMoreBtn').classList.add('flex');
         }
 
         //console.log('—————————————————');
@@ -289,11 +313,28 @@ function isLetter(str) {
     }
 }
 
-function fixDashes(unfixed) {
+function fixDashes(unfixed) { // only put one dash between numbers and letters
     fixed = unfixed.replaceAll(/--+/g, '-').toUpperCase();
     if (fixed.startsWith('-')) fixed = fixed.substring(1);
     if (fixed.endsWith('-')) fixed = fixed.substring(0, fixed.length - 1);
     return fixed;
+}
+
+function numOfGoodNums(string) { // find length of longest string of consecutive numbers 2-9 from the input
+    numsArr = string.replace(/[^2-9]/g, '+').split('+').sort(function (a, b) { return a - b });
+    return numsArr[numsArr.length - 1].length;
+}
+
+function showMoreNums() {
+    document.getElementById('moreNumsList').classList.remove('hidden');
+    document.getElementById('moreNumsList').classList.add('grid');
+    document.getElementById('showMoreBtn').classList.remove('flex');
+    document.getElementById('showMoreBtn').classList.add('hidden');
+}
+
+function removeDuplicates(array) {
+    // https://stackoverflow.com/a/9229821
+    return [...new Set(array)];
 }
 
 function randomNum() {
