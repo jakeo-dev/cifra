@@ -1,3 +1,7 @@
+// ALTERNATE METHDOD: convert each word in the words.txt list to a string of numbers, then go through each combination of word numbers to see if the phone number contains any of them
+
+
+
 window.onload = readN;
 
 function readN() {
@@ -10,6 +14,16 @@ function readN() {
                 // Makes sure it's found the file.
                 wordList = txtFile.responseText;
                 wordArray = wordList.split('\n');
+
+                wordNumsArray = [];
+                for (j = 0; j < wordArray.length; j++) {
+                    numeroFinal = '';
+                    for (k = 0; k < wordArray[j].length; k++) {
+                        numero = getNumber(wordArray[j][k]);
+                        numeroFinal += numero;
+                    }
+                    wordNumsArray.push(numeroFinal);
+                }
             }
         }
     }
@@ -122,120 +136,43 @@ function enter() {
     } else {
         const start = performance.now();
 
-        let currentNumsList = [];
-        let triedCombos = [];
-
         for (l = 0; l < 18; l++) {
             document.getElementById('i' + l).innerText = '';
         }
 
-        a = 0;
+        let currentNumsList = [];
 
-        for (i = 0; i < 18; i++) { // maximum number of phone numbers to output
-            if (a < 500) { // number of attempts to try to find matches before giving up
-                let letters = getLetters(inp);
+        for (m = 0; m < wordNumsArray.length; m++) {
+            if (inp.includes(wordNumsArray[m])) {
+                // put first word in phone number
+                finalNumb1 = inp.replace(wordNumsArray[m], '-' + wordArray[m] + '-');
 
-                w = 0;
-                while (triedCombos.includes(letters)) { // if a letter combo has already been tried, it gets a new combo of letters
-                    letters = getLetters(inp);
-                    if (w > 18) break; // prevent short numbers that are unable to make different letter combos from entering an infinite loop (ex. 127 only has 12 combos, none of which contain a word)
-                    w++;
-                }
-
-                triedCombos.push(letters);
-
-                for (k = 0; k < wordArray.length; k++) { // loop through all words to see if any of the random letters match them
-                    matches = letters.toLowerCase().includes(wordArray[k]);
-                    if (matches) {
-                        let wordSep = Array.from(wordArray[k]);
-
-                        let finalNums = '';
-
-                        for (m = 0; m < wordSep.length; m++) {
-                            num = getNumber(wordSep[m]);
-                            finalNums = finalNums + num;
-                        }
-
-                        final = inp.replace(finalNums, wordArray[k]);
-
-                        thing = letters.replace(wordArray[k].toUpperCase(), finalNums);
-                        for (o = 0; o < wordArray.length; o++) { // loop through all words a SECOND TIME to see if any of the random letters match them
-                            matches2 = thing.toLowerCase().includes(wordArray[o]);
-                            if (matches2) {
-                                let wordSep = Array.from(wordArray[o]);
-
-                                let finalNums = '';
-
-                                for (m = 0; m < wordSep.length; m++) {
-                                    num = getNumber(wordSep[m]);
-                                    finalNums = finalNums + num;
-                                }
-
-                                n = final.indexOf(finalNums);
-
-                                // add dashes if there is a word next to this second word
-
-                                if (isLetter(final.substring(n + finalNums.length).charAt(0))) {
-                                    final = final.replace(finalNums, wordArray[o] + '-');
-
-                                } else if (isLetter(final.substring(n - 1).charAt(0))) {
-                                    final = final.replace(finalNums, '-' + wordArray[o]);
-
-                                } else {
-                                    final = final.replace(finalNums, wordArray[o]);
-                                }
-
-                                break;
-
-                            }
-                        }
-
-                        let finalSep = Array.from(final);
-
-                        for (m = 0; m < finalSep.length; m++) { // add dashes
-                            if (!isNaN(finalSep[m]) && (isNaN(finalSep[m + 1]) && finalSep[m + 1] != null)) {
-                                finalSep[m] = finalSep[m] + '-';
-                            } else if (isNaN(finalSep[m]) && !isNaN(finalSep[m + 1])) {
-                                finalSep[m] = finalSep[m] + '-';
-                            }
-                        }
-
-                        finalJoined = finalSep.join('').toUpperCase();
-
-                        let dontAllow = false; // if a phone number is already in the ones to be shown, it tries again
-                        for (var i = 0; i < currentNumsList.length; i++) {
-                            if (finalJoined == currentNumsList[i]) {
-                                dontAllow = true;
-                            }
-                        }
-
-                        if (!dontAllow) {
-                            currentNumsList.push(finalJoined);
-                            document.getElementById('i' + i).innerText = finalJoined;
-
-                            break;
-                        }
+                // put second word (if possible) in phone number
+                for (n = 0; n < wordNumsArray.length; n++) {
+                    if (finalNumb1.includes(wordNumsArray[n])) {
+                        finalNumb1 = finalNumb1.replace(wordNumsArray[n], '-' + wordArray[n] + '-');
                     }
                 }
 
-                if (!matches && i > -1) {
-                    i -= 1;
+                // fix dashes
+                finalNumb2 = finalNumb1.replaceAll('--', '-').toUpperCase();
+                if (finalNumb2.startsWith('-')) finalNumb2 = finalNumb2.substring(1);
+                if (finalNumb2.endsWith('-')) finalNumb2 = finalNumb2.substring(0, finalNumb2.length - 1);
 
-                    a++;
-                }
-
-                document.getElementById('noMatchesText').innerText = '';
-                document.getElementById('fewMatchesText').innerText = '';
-
-            } else {
-                i = 18;
-
-                if (currentNumsList.length < 1) {
-                    document.getElementById('noMatchesText').innerText = 'Unable to find any matches\n\nTry generating again';
-                } else if (currentNumsList.length < 12) {
-                    document.getElementById('fewMatchesText').innerText = 'Try generating again to find more matches';
-                }
+                currentNumsList.push(finalNumb2);
             }
+        }
+
+        document.getElementById('noMatchesText').innerText = '';
+        if (currentNumsList.length < 1) {
+            document.getElementById('noMatchesText').innerText = 'That phone number doesn\'t any vanity numbers';
+        }
+
+        for (i = 0; i < 18; i++) { // display 18 random phone numbers from the ones generated
+            currentItem = currentNumsList[Math.floor(Math.random() * currentNumsList.length)];
+            if (currentItem != undefined) document.getElementById('i' + i).innerText = currentItem;
+            currentNumsList.splice(currentNumsList.indexOf(currentItem), 1);
+
         }
 
         //console.log('—————————————————');
@@ -246,9 +183,9 @@ function enter() {
 
         /* lalala++;
         strStr = strStr + '\n' + time;
-        console.log("ALL TIMES: " + strStr);
-        console.log("NUMBER: " + lalala);
-        console.log("AVERAGE: " + getAverage(strStr.replace('\n', '').split('\n'))); */
+        console.log('ALL TIMES: ' + strStr);
+        console.log('NUMBER: ' + lalala);
+        console.log('AVERAGE: ' + getAverage(strStr.replace('\n', '').split('\n'))); */
     }
 }
 
