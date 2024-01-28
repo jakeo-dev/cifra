@@ -1,7 +1,3 @@
-// ALTERNATE METHDOD: convert each word in the words.txt list to a string of numbers, then go through each combination of word numbers to see if the phone number contains any of them
-
-
-
 window.onload = readN;
 
 function readN() {
@@ -165,7 +161,7 @@ function enter() {
 
         document.getElementById('noMatchesText').innerText = '';
         if (currentNumsList.length < 1) {
-            document.getElementById('noMatchesText').innerText = 'That phone number doesn\'t any vanity numbers';
+            document.getElementById('noMatchesText').innerText = 'That phone number doesn\'t have any vanity numbers';
         }
 
         for (i = 0; i < 18; i++) { // display 18 random phone numbers from the ones generated
