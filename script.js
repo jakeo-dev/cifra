@@ -140,15 +140,28 @@ function enter() {
 
         for (m = 0; m < wordNumsArray.length; m++) {
             if (inp.includes(wordNumsArray[m])) {
-                // put first word in phone number
+                // put FIRST word in phone number
                 finalNumb1 = inp.replace(wordNumsArray[m], '-' + wordArray[m] + '-');
 
-                // put second word (if possible) in phone number
+                // put SECOND word (if possible) in phone number
+                let secondWordList = [];
                 for (n = 0; n < wordNumsArray.length; n++) {
                     if (finalNumb1.includes(wordNumsArray[n])) {
-                        finalNumb1 = finalNumb1.replace(wordNumsArray[n], '-' + wordArray[n] + '-');
+                        secondWordList.push(n);
                     }
                 }
+                randomSecondWordIndex = secondWordList[Math.floor(Math.random() * secondWordList.length)];
+                finalNumb1 = finalNumb1.replace(wordNumsArray[randomSecondWordIndex], '-' + wordArray[randomSecondWordIndex] + '-');
+
+                // put THIRD word (if possible) in phone number
+                let thirdWordList = [];
+                for (o = 0; o < wordNumsArray.length; o++) {
+                    if (finalNumb1.includes(wordNumsArray[o])) {
+                        thirdWordList.push(o);
+                    }
+                }
+                randomSecondWordIndex = thirdWordList[Math.floor(Math.random() * thirdWordList.length)];
+                finalNumb1 = finalNumb1.replace(wordNumsArray[randomSecondWordIndex], '-' + wordArray[randomSecondWordIndex] + '-');
 
                 // fix dashes
                 finalNumb2 = finalNumb1.replaceAll('--', '-').toUpperCase();
