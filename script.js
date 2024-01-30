@@ -132,72 +132,78 @@ function enter() {
     } else {
         const start = performance.now();
 
-        for (i = 0; i < document.getElementsByClassName('item').length; i++) {
+        for (i = 0; i < document.getElementById('numsList').getElementsByClassName('item').length; i++) {
             document.getElementById('i' + i).innerText = '';
         }
 
-        let aNumsList = [];
-        let bNumsList = [];
-        let cNumsList = [];
+        let moreNumsLength = document.getElementById('moreNumsList').getElementsByClassName('item').length + document.getElementById('numsList').getElementsByClassName('item').length;
+        for (i = document.getElementById('numsList').getElementsByClassName('item').length; i < moreNumsLength; i++) {
+            document.getElementById('i' + i).remove();
+        }
+
+        let oneNumsArray = [];
+        let twoNumsArray = [];
+        let threeNumsArray = [];
 
         for (m = 0; m < wordNumsArray.length; m++) {
             if (inp.includes(wordNumsArray[m])) {
                 // put first word in phone number
                 finalNumb = inp.replace(wordNumsArray[m], '-' + wordArray[m] + '-');
-                aNumsList.push(fixDashes(finalNumb));
+                oneNumsArray.push(fixDashes(finalNumb));
             }
         }
 
-        if (aNumsList.length > 0 && numOfGoodNums(aNumsList[aNumsList.length - 1]) > 2) {
+        if (oneNumsArray.length > 0 && numOfGoodNums(oneNumsArray[oneNumsArray.length - 1]) > 2) {
             // put second word in phone number (if possible)
-            for (n = 0; n < aNumsList.length; n++) {
+            for (n = 0; n < oneNumsArray.length; n++) {
                 for (o = 0; o < wordNumsArray.length; o++) {
-                    if (aNumsList[n].includes(wordNumsArray[o])) {
-                        finalNumb = aNumsList[n].replace(wordNumsArray[o], '-' + wordArray[o] + '-');
-                        bNumsList.push(fixDashes(finalNumb));
+                    if (oneNumsArray[n].includes(wordNumsArray[o])) {
+                        finalNumb = oneNumsArray[n].replace(wordNumsArray[o], '-' + wordArray[o] + '-');
+                        twoNumsArray.push(fixDashes(finalNumb));
                     }
                 }
             }
 
-            if (bNumsList.length > 0 && numOfGoodNums(bNumsList[bNumsList.length - 1]) > 2) {
+            if (twoNumsArray.length > 0 && numOfGoodNums(twoNumsArray[twoNumsArray.length - 1]) > 2) {
                 // put third word in phone number (if possible)
-                for (p = 0; p < bNumsList.length; p++) {
+                for (p = 0; p < twoNumsArray.length; p++) {
                     for (q = 0; q < wordNumsArray.length; q++) {
-                        if (bNumsList[p].includes(wordNumsArray[q])) {
-                            finalNumb = bNumsList[p].replace(wordNumsArray[q], '-' + wordArray[q] + '-');
-                            cNumsList.push(fixDashes(finalNumb));
+                        if (twoNumsArray[p].includes(wordNumsArray[q])) {
+                            finalNumb = twoNumsArray[p].replace(wordNumsArray[q], '-' + wordArray[q] + '-');
+                            threeNumsArray.push(fixDashes(finalNumb));
                         }
                     }
                 }
             }
         }
 
-        allNumsList = removeDuplicates(aNumsList.concat(bNumsList, cNumsList));
+        allNumsArray = removeDuplicates(oneNumsArray.concat(twoNumsArray, threeNumsArray));
 
-        let displayedNumsList = [];
-        let tempItemsList = JSON.parse(JSON.stringify(allNumsList));
+        displayedNumsArray = [];
+        remainingItemsArray = JSON.parse(JSON.stringify(allNumsArray));
 
-        for (i = 0; i < document.getElementsByClassName('item').length; i++) { // display random phone numbers from the ones generated
-            currentItem = tempItemsList[Math.floor(Math.random() * tempItemsList.length)];
+        for (i = 0; i < document.getElementById('numsList').getElementsByClassName('item').length; i++) { // display random phone numbers from the ones generated
+            currentItem = remainingItemsArray[Math.floor(Math.random() * remainingItemsArray.length)];
             if (currentItem != undefined) {
                 document.getElementById('i' + i).innerText = currentItem;
-                displayedNumsList.push(currentItem);
-                tempItemsList.splice(tempItemsList.indexOf(currentItem), 1);
+
+                displayedNumsArray.push(currentItem);
+                remainingItemsArray.splice(remainingItemsArray.indexOf(currentItem), 1);
             }
         }
 
         document.getElementById('noMatchesText').innerText = '';
-        if (displayedNumsList.length < 1) {
+        if (displayedNumsArray.length < 1) {
             document.getElementById('noMatchesText').innerText = 'That phone number doesn\'t have any vanity numbers';
         }
 
-        document.getElementById('showMoreBtn').classList.add('hidden');
-        document.getElementById('showMoreBtn').classList.remove('flex');
+        document.getElementById('showAllBtn').classList.add('hidden');
+        document.getElementById('showAllBtn').classList.remove('flex');
         document.getElementById('moreNumsList').classList.add('hidden');
         document.getElementById('moreNumsList').classList.remove('grid');
-        if (displayedNumsList.length > 18) {
-            document.getElementById('showMoreBtn').classList.remove('hidden');
-            document.getElementById('showMoreBtn').classList.add('flex');
+        if (allNumsArray.length > 18) {
+            document.getElementById('showAllBtn').classList.remove('hidden');
+            document.getElementById('showAllBtn').classList.add('flex');
         }
 
         //console.log('—————————————————');
@@ -205,7 +211,7 @@ function enter() {
         const end = performance.now();
         time = (end - start).toFixed(1);
         console.log(time + ' ms');
-        document.getElementById('generationText').innerText = 'Generated in ' + time + ' ms';
+        document.getElementById('generationText').innerText = allNumsArray.length + ' vanity numbers generated in ' + time + ' ms';
 
         /* lalala++;
         strStr = strStr + '\n' + time;
@@ -325,11 +331,42 @@ function numOfGoodNums(string) { // find length of longest string of consecutive
     return numsArr[numsArr.length - 1].length;
 }
 
-function showMoreNums() {
+function showAllNums() {
     document.getElementById('moreNumsList').classList.remove('hidden');
     document.getElementById('moreNumsList').classList.add('grid');
-    document.getElementById('showMoreBtn').classList.remove('flex');
-    document.getElementById('showMoreBtn').classList.add('hidden');
+    document.getElementById('showAllBtn').classList.remove('flex');
+    document.getElementById('showAllBtn').classList.add('hidden');
+
+    let moreNumsLength = remainingItemsArray.length;
+
+    for (i = 0; i < moreNumsLength; i++) { // display random phone numbers from the ones generated
+        currentItem = remainingItemsArray[Math.floor(Math.random() * remainingItemsArray.length)];
+        if (currentItem != undefined) {
+            const li = document.createElement('li');
+            li.appendChild(document.createTextNode(currentItem));
+            li.classList.add('item');
+            li.id = 'i' + (i + document.getElementById('numsList').getElementsByClassName('item').length);
+            document.getElementById('moreNumsList').appendChild(li);
+
+            displayedNumsArray.push(currentItem);
+            remainingItemsArray.splice(remainingItemsArray.indexOf(currentItem), 1);
+        }
+    }
+
+    document.querySelectorAll('.item').forEach(function (element) {
+        element.addEventListener('click', function (event) {
+            savedNumsList.push(event.target.innerText);
+            localStorage.setItem('savedNums', JSON.stringify(savedNumsList));
+            document.getElementById('slSubtext').classList.add('hidden');
+
+            let li = document.createElement('li');
+            li.innerText = event.target.innerText;
+            li.className = 'savedNum';
+            document.getElementById('savedList').appendChild(li);
+
+            alert('Starred number: ' + event.target.innerText + '\n\nView all starred numbers by clicking the star icon');
+        });
+    });
 }
 
 function removeDuplicates(array) {

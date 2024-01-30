@@ -4,7 +4,7 @@
 
 @layer components {
   .item {
-    @apply block hover:text-yellow-600 active:text-yellow-700 transition-all mx-auto cursor-pointer;
+    @apply block hover:text-yellow-600 active:text-yellow-700 transition-all mx-auto h-min cursor-pointer;
   }
 
   .savedNum {

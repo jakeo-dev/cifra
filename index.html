@@ -34,8 +34,9 @@
         <button class='float-right text-3xl text-gray-500 hover:text-yellow-500 active:text-yellow-400 transition-all'
             id='openSavedBtn'><i class='fa-solid fa-star' aria-label='View starred numbers'
                 title='View starred numbers'></i></button>
-        <div class='hidden relative top-12 bg-slate-200 w-full shadow-md px-6 py-5 z-10 rounded-md' id='savedListDiv'>
-            <h1 class='text-xl text-right font-medium mb-3'>Starred numbers</h3>
+        <div class='hidden relative top-4 bg-slate-200 w-full shadow-md px-6 py-5 z-10 rounded-md max-h-96 overflow-auto'
+            id='savedListDiv'>
+            <h1 class='text-xl text-right font-medium sticky mb-3'>Starred numbers</h3>
                 <h2 class='italic text-right font-light' id='slSubtext'>No numbers starred</h3>
                     <ul class='text-2xl font-FiraCode leading-[2.75rem] text-right' id='savedList'>
                     </ul>
@@ -59,7 +60,7 @@
 
     <h2 id='noMatchesText' class='text-3xl font-FiraCode text-center mt-10'></h2>
 
-    <div
+    <div id='numsList'
         class='max-w-[60rem] mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-3xl font-FiraCode text-center justify-center items-center mt-10'>
         <li id='i0' class='item'></li>
         <li id='i1' class='item'></li>
@@ -82,38 +83,12 @@
     </div>
 
     <button class='hover:text-gray-600 active:text-gray-500 hidden mx-auto text-2xl items-center mt-10 transition-all'
-        id='showMoreBtn' onclick='showMoreNums()'>Show more<i
-            class='fa-solid fa-chevron-down text-lg ml-2'></i></button>
+        id='showAllBtn' onclick='showAllNums()'>Show all<i class='fa-solid fa-chevron-down text-lg ml-2'></i></button>
 
     <div id='moreNumsList'
         class='max-w-[60rem] mx-auto hidden md:grid-cols-2 lg:grid-cols-3 gap-8 text-3xl font-FiraCode text-center justify-center items-center mt-8'>
-        <li id='i18' class='item'></li>
-        <li id='i19' class='item'></li>
-        <li id='i20' class='item'></li>
-        <li id='i21' class='item'></li>
-        <li id='i22' class='item'></li>
-        <li id='i23' class='item'></li>
-        <li id='i24' class='item'></li>
-        <li id='i25' class='item'></li>
-        <li id='i26' class='item'></li>
-        <li id='i27' class='item'></li>
-        <li id='i28' class='item'></li>
-        <li id='i29' class='item'></li>
-        <li id='i30' class='item'></li>
-        <li id='i31' class='item'></li>
-        <li id='i32' class='item'></li>
-        <li id='i33' class='item'></li>
-        <li id='i34' class='item'></li>
-        <li id='i35' class='item'></li>
-        <li id='i36' class='item'></li>
-        <li id='i37' class='item'></li>
-        <li id='i38' class='item'></li>
-        <li id='i39' class='item'></li>
-        <li id='i40' class='item'></li>
-        <li id='i41' class='item'></li>
-        <li id='i42' class='item'></li>
-        <li id='i43' class='item'></li>
-        <li id='i44' class='item'></li>
+        <!-- <li id='i18' class='item'></li> -->
+
     </div>
 
     <footer class='bg-gray-100 fixed bottom-0 left-0 w-full p-3 md:p-4'>
