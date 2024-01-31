@@ -331,6 +331,11 @@ function numOfGoodNums(string) { // find length of longest string of consecutive
     return numsArr[numsArr.length - 1].length;
 }
 
+function longestWord(string) { // find length of longest string of consecutive letters A-Z from the input
+    wordsArr = string.replace(/[^A-Z]/g, '+').split('+').sort();
+    return wordsArr[wordsArr.length - 1].length;
+}
+
 function showAllNums() {
     document.getElementById('moreNumsList').classList.remove('hidden');
     document.getElementById('moreNumsList').classList.add('grid');
@@ -353,7 +358,7 @@ function showAllNums() {
         }
     }
 
-    document.querySelectorAll('.item').forEach(function (element) {
+    document.getElementById('moreNumsList').querySelectorAll('.item').forEach(function (element) {
         element.addEventListener('click', function (event) {
             savedNumsList.push(event.target.innerText);
             localStorage.setItem('savedNums', JSON.stringify(savedNumsList));
