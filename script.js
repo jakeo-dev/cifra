@@ -26,6 +26,9 @@ function readN() {
     txtFile.send(null);
 }
 
+const bold = 'font-weight: bold';
+const normal = 'font-weight: normal';
+
 let two = [
     'A',
     'B',
@@ -210,14 +213,14 @@ function enter() {
 
         const end = performance.now();
         time = (end - start).toFixed(1);
-        console.log(time + ' ms');
+        /* if (allNumsArray.length > 400) */ console.log('%c' + inp + '%c\n' + allNumsArray.length + ' nums \n' + time + ' ms', bold, normal);
         document.getElementById('generationText').innerText = allNumsArray.length + ' vanity numbers generated in ' + time + ' ms';
 
-        /* lalala++;
-        strStr = strStr + '\n' + time;
-        console.log('ALL TIMES: ' + strStr);
-        console.log('NUMBER: ' + lalala);
-        console.log('AVERAGE: ' + getAverage(strStr.replace('\n', '').split('\n'))); */
+        //lalala++;
+        //strStr = strStr + '\n' + time;
+        //console.log('ALL TIMES: ' + strStr);
+        //console.log('NUMBER: ' + lalala);
+        //console.log('AVERAGE: ' + getAverage(strStr.replace('\n', '').split('\n'))); 
     }
 }
 
@@ -227,9 +230,9 @@ let lalala = 0;
 setInterval(function () {
     randomNum();
     enter();
-}, 2100); */
+}, 1);
 
-/* function getAverage(list) {
+function getAverage(list) {
     return (list.map(item => Number(item)).reduce((a, b) => a + b) / list.length).toFixed(1);
 } */
 
@@ -380,7 +383,11 @@ function removeDuplicates(array) {
 }
 
 function randomNum() {
-    document.getElementById('input').value = Math.floor(Math.random() * 10000000000);
+    str = '';
+    for (i = 0; i < 10; i++) {
+        str += (Math.random() * (9 - 2) + 2).toFixed(0);
+    }
+    document.getElementById('input').value = str;
 }
 
 document.getElementById('input').addEventListener('keypress', function (event) {
