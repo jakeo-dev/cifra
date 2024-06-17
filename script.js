@@ -204,7 +204,7 @@ function enter() {
         document.getElementById('showAllBtn').classList.remove('flex');
         document.getElementById('moreNumsList').classList.add('hidden');
         document.getElementById('moreNumsList').classList.remove('grid');
-        if (allNumsArray.length > 18) {
+        if (allNumsArray.length > document.getElementById('numsList').getElementsByClassName('item').length) {
             document.getElementById('showAllBtn').classList.remove('hidden');
             document.getElementById('showAllBtn').classList.add('flex');
         }
@@ -336,7 +336,13 @@ function numOfGoodNums(string) { // find length of longest string of consecutive
 
 function longestWord(string) { // find length of longest string of consecutive letters A-Z from the input
     wordsArr = string.replace(/[^A-Z]/g, '+').split('+').sort();
-    return wordsArr[wordsArr.length - 1].length;
+    thingArr = [];
+    for (i = 0; i < wordsArr.length; i++) {
+        if (wordsArr[i] != '' && wordsArr[i] != null) thingArr.push(wordsArr[i].length);
+    }
+    thingArr.sort();
+    console.log(thingArr);
+    return thingArr[thingArr.length - 1].length;
 }
 
 function showAllNums() {
@@ -382,7 +388,7 @@ function removeDuplicates(array) {
     return [...new Set(array)];
 }
 
-function randomNum() {
+function randomNum() { // now only generates numbers without 0s or 1s
     str = '';
     for (i = 0; i < 10; i++) {
         str += (Math.random() * (9 - 2) + 2).toFixed(0);

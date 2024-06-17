@@ -35548,6 +35548,7 @@ hinges
 hinted
 hippie
 hiring
+hisies
 hissed
 hisses
 hither
@@ -40662,7 +40663,6 @@ dwell
 dwelt
 dyers
 dying
-dykes
 eager
 eagle
 eared
@@ -41765,7 +41765,6 @@ malty
 malva
 mamas
 mamba
-mammy
 maned
 manes
 mange
@@ -42310,8 +42309,6 @@ porch
 pored
 pores
 porky
-porno
-porns
 ports
 posed
 poser
@@ -45334,7 +45331,6 @@ pope
 pops
 pore
 pork
-porn
 port
 pose
 posh
@@ -46422,6 +46418,7 @@ oil
 old
 ole
 olm
+omg
 one
 ooh
 opt
