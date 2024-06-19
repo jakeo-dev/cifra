@@ -81,7 +81,7 @@ let nine = [
 
 let savedNumsList = [];
 
-//console.log('%c' + '• INPUTTED NUMBER' + '%c\n' + '• # OF GENERATED VANITY NUMBERS\n' + '• AMOUNT OF TIME TO COMPLETE GENERATION\n' + '• AVERAGE GENERATED VANITY NUMBER QUALITY (takes length of inputted number into account, but not the # of generated numbers)', bold, normal);
+//console.log('%c' + '• INPUTTED NUMBER' + '%c\n' + '• # OF GENERATED VANITY NUMBERS\n' + '• AMOUNT OF TIME TO COMPLETE GENERATION\n' + '• INPUTTED NUMBER QUALITY (takes into account: average quality of individual generated vanity nums and the # of generated numbers)', bold, normal);
 
 if (localStorage.getItem('savedNums') !== '[""]' && localStorage.getItem('savedNums') !== null && localStorage.getItem('savedNums') !== undefined) {
     savedNumsList = JSON.parse(localStorage.getItem('savedNums'));
@@ -189,7 +189,8 @@ function enter() {
             allNumsScoresArray[i] = numLetters(allNumsArray[i]) - numNumbers(allNumsArray[i]) - (numDashes(allNumsArray[i]) - 1);
         }
 
-        avgVanityNumberQuality = (getAverage(allNumsScoresArray) + (inp.length / 40)).toFixed(2); // also accounts for phone number length since longer numbers typically have lower average scores, but does NOT take number of numbers generated into account
+        avgVanityNumberQuality = (getAverage(allNumsScoresArray) + (inp.length / 40)).toFixed(2); // average quality of each individual generated vanity number, doesnt account for # of vanity nums generated, but accounts for phone number length since longer numbers typically have lower average scores
+        overallNumberQuality = (getAverage(allNumsScoresArray) + (inp.length / 40) + (allNumsArray.length / (inp.length * 20))).toFixed(2); // overall quality of the inputted phone number, accounting for both avgVanityNumberQuality and # of vanity nums generated
 
         displayedNumsArray = [];
         remainingItemsArray = JSON.parse(JSON.stringify(allNumsArray));
@@ -229,8 +230,8 @@ function enter() {
         //console.log('—————————————————');
 
         const end = performance.now();
-        time = (end - start).toFixed(1); avgVanityNumberQuality
-        /* if (allNumsArray.length > 400) */ console.log('%c' + inp + '%c\n' + allNumsArray.length + ' nums\n' + time + ' ms\n' + avgVanityNumberQuality + ' avg quality', bold, normal);
+        time = (end - start).toFixed(1);
+        /* if (allNumsArray.length > 400) */ console.log('%c' + inp + '%c\n' + allNumsArray.length + ' nums\n' + time + ' ms\n' + overallNumberQuality + ' quality', bold, normal);
         document.getElementById('generationText').innerText = allNumsArray.length + ' vanity numbers generated in ' + time + ' ms';
 
         //lalala++;
