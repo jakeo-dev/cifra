@@ -148,26 +148,36 @@ function enter() {
         avgVanityNumberScore = (getAverage(allNumsScoresArray) + (inp.length / 40)).toFixed(2); // average quality of each individual generated vanity number, doesnt account for # of vanity nums generated, but accounts for phone number length since longer numbers typically have lower average scores
         overallNumberQuality = (getAverage(allNumsScoresArray) + (inp.length / 40) + (allNumsArray.length / (inp.length * 20))).toFixed(2); // overall quality of the inputted phone number, accounting for both avgVanityNumberScore and # of vanity nums generated
 
+        topNumsArray = [];
         displayedNumsArray = [];
         remainingItemsArray = JSON.parse(JSON.stringify(allNumsArray));
 
-        if (allNumsArray.length > 18) l = 18;
+        if (allNumsArray.length > 500) l = 150;
+        else if (allNumsArray.length > 250) l = 75;
+        else if (allNumsArray.length > 100) l = 35;
+        else if (allNumsArray.length > 60) l = 25;
+        else if (allNumsArray.length > 18) l = 18;
         else l = allNumsArray.length;
 
         let tempAllNumsScoresArray = JSON.parse(JSON.stringify(allNumsScoresArray));
-        for (j = 0; j < l; j++) {
+        for (j = 0; j < l; j++) { // detrmine the top l vanity numbers
             greatestNumIndex = greatestNumber(tempAllNumsScoresArray);
-            currentItem = allNumsArray[greatestNumIndex];
+            greatestItem = allNumsArray[greatestNumIndex];
 
-            displayedNumsArray.push(currentItem);
-            remainingItemsArray.splice(remainingItemsArray.indexOf(currentItem), 1);
+            topNumsArray.push(greatestItem);
 
             tempAllNumsScoresArray[greatestNumIndex] = -99999;
         }
 
-        displayedNumsArray = shuffle(displayedNumsArray);
-        for (k = 0; k < document.getElementById('numsList').getElementsByClassName('item').length; k++) { // display random phone numbers from the ones generated
-            if (displayedNumsArray[k]) document.getElementById('i' + k).innerText = displayedNumsArray[k];
+        for (k = 0; k < document.getElementById('numsList').getElementsByClassName('item').length; k++) {
+            randomItem = topNumsArray[Math.floor(Math.random() * topNumsArray.length)];
+            if (randomItem != undefined) {
+                displayedNumsArray.push(randomItem);
+                document.getElementById('i' + k).innerText = randomItem;
+
+                topNumsArray.splice(topNumsArray.indexOf(randomItem), 1);
+                remainingItemsArray.splice(remainingItemsArray.indexOf(randomItem), 1);
+            }
         }
 
         document.getElementById('noMatchesText').innerText = '';
@@ -272,16 +282,16 @@ function showAllNums() {
     let moreNumsLength = remainingItemsArray.length;
 
     for (i = 0; i < moreNumsLength; i++) { // display random phone numbers from the ones generated
-        currentItem = remainingItemsArray[Math.floor(Math.random() * remainingItemsArray.length)];
-        if (currentItem != undefined) {
+        randomItem = remainingItemsArray[Math.floor(Math.random() * remainingItemsArray.length)];
+        if (randomItem != undefined) {
             const li = document.createElement('li');
-            li.appendChild(document.createTextNode(currentItem));
+            li.appendChild(document.createTextNode(randomItem));
             li.classList.add('item');
             li.id = 'i' + (i + document.getElementById('numsList').getElementsByClassName('item').length);
             document.getElementById('moreNumsList').appendChild(li);
 
-            displayedNumsArray.push(currentItem);
-            remainingItemsArray.splice(remainingItemsArray.indexOf(currentItem), 1);
+            displayedNumsArray.push(randomItem);
+            remainingItemsArray.splice(remainingItemsArray.indexOf(randomItem), 1);
         }
     }
 
