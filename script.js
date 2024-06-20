@@ -158,7 +158,7 @@ function enter() {
             }
         }
 
-        if (oneNumsArray.length > 0 && numOfGoodNums(oneNumsArray[oneNumsArray.length - 1]) > 2) {
+        if (oneNumsArray.length > 0 && (numOfGoodNums(oneNumsArray[oneNumsArray.length - 1]) > 2 || numOfGoodNums(oneNumsArray[0]) > 2)) {
             // put second word in phone number (if possible)
             for (n = 0; n < oneNumsArray.length; n++) {
                 for (o = 0; o < wordNumsArray.length; o++) {
@@ -169,7 +169,7 @@ function enter() {
                 }
             }
 
-            if (twoNumsArray.length > 0 && numOfGoodNums(twoNumsArray[twoNumsArray.length - 1]) > 2) {
+            if (twoNumsArray.length > 0 && (numOfGoodNums(twoNumsArray[twoNumsArray.length - 1]) > 2 || numOfGoodNums(twoNumsArray[0]) > 2)) {
                 // put third word in phone number (if possible)
                 for (p = 0; p < twoNumsArray.length; p++) {
                     for (q = 0; q < wordNumsArray.length; q++) {
