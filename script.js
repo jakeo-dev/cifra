@@ -29,59 +29,9 @@ function readN() {
 const bold = 'font-weight: bold';
 const normal = 'font-weight: normal';
 
-let two = [
-    'A',
-    'B',
-    'C',
-]
-
-let three = [
-    'D',
-    'E',
-    'F',
-]
-
-let four = [
-    'G',
-    'H',
-    'I',
-]
-
-let five = [
-    'J',
-    'K',
-    'L',
-]
-
-let six = [
-    'M',
-    'N',
-    'O',
-]
-
-let seven = [
-    'P',
-    'Q',
-    'R',
-    'S',
-]
-
-let eight = [
-    'T',
-    'U',
-    'V',
-]
-
-let nine = [
-    'W',
-    'X',
-    'Y',
-    'Z',
-]
+//console.log('%c' + '• INPUTTED NUMBER' + '%c\n' + '• # OF GENERATED VANITY NUMBERS\n' + '• AMOUNT OF TIME TO COMPLETE GENERATION\n' + '• INPUTTED NUMBER QUALITY (takes into account: average quality of individual generated vanity nums and the # of generated numbers)', bold, normal);
 
 let savedNumsList = [];
-
-//console.log('%c' + '• INPUTTED NUMBER' + '%c\n' + '• # OF GENERATED VANITY NUMBERS\n' + '• AMOUNT OF TIME TO COMPLETE GENERATION\n' + '• INPUTTED NUMBER QUALITY (takes into account: average quality of individual generated vanity nums and the # of generated numbers)', bold, normal);
 
 if (localStorage.getItem('savedNums') !== '[""]' && localStorage.getItem('savedNums') !== null && localStorage.getItem('savedNums') !== undefined) {
     savedNumsList = JSON.parse(localStorage.getItem('savedNums'));
@@ -114,6 +64,12 @@ document.querySelectorAll('.item').forEach(function (element) {
 
 document.getElementById('openSavedBtn').addEventListener('click', function (event) {
     document.getElementById('savedListDiv').classList.toggle('hidden');
+});
+
+document.addEventListener('click', function (event) {
+    if (event.target.id != 'savedListDiv' && event.target.id != 'openSavedBtn' && event.target.id != 'openSavedBtnI' && event.target.id != 'openSavedBtnS' && event.target.className != 'savedNum') {
+        document.getElementById('savedListDiv').classList.add('hidden');
+    }
 });
 
 document.getElementById('savedListDiv').addEventListener('click', function (event) {
@@ -182,15 +138,15 @@ function enter() {
             }
         }
 
-        let allNumsArray = removeDuplicates(oneNumsArray.concat(twoNumsArray, threeNumsArray));
+        allNumsArray = removeDuplicates(oneNumsArray.concat(twoNumsArray, threeNumsArray));
 
-        let allNumsScoresArray = JSON.parse(JSON.stringify(allNumsArray));
+        allNumsScoresArray = JSON.parse(JSON.stringify(allNumsArray));
         for (i = 0; i < allNumsScoresArray.length; i++) {
-            allNumsScoresArray[i] = numLetters(allNumsArray[i]) - numNumbers(allNumsArray[i]) - (numDashes(allNumsArray[i]) - 1);
+            allNumsScoresArray[i] = getScore(allNumsArray[i]);
         }
 
-        avgVanityNumberQuality = (getAverage(allNumsScoresArray) + (inp.length / 40)).toFixed(2); // average quality of each individual generated vanity number, doesnt account for # of vanity nums generated, but accounts for phone number length since longer numbers typically have lower average scores
-        overallNumberQuality = (getAverage(allNumsScoresArray) + (inp.length / 40) + (allNumsArray.length / (inp.length * 20))).toFixed(2); // overall quality of the inputted phone number, accounting for both avgVanityNumberQuality and # of vanity nums generated
+        avgVanityNumberScore = (getAverage(allNumsScoresArray) + (inp.length / 40)).toFixed(2); // average quality of each individual generated vanity number, doesnt account for # of vanity nums generated, but accounts for phone number length since longer numbers typically have lower average scores
+        overallNumberQuality = (getAverage(allNumsScoresArray) + (inp.length / 40) + (allNumsArray.length / (inp.length * 20))).toFixed(2); // overall quality of the inputted phone number, accounting for both avgVanityNumberScore and # of vanity nums generated
 
         displayedNumsArray = [];
         remainingItemsArray = JSON.parse(JSON.stringify(allNumsArray));
@@ -198,14 +154,15 @@ function enter() {
         if (allNumsArray.length > 18) l = 18;
         else l = allNumsArray.length;
 
+        let tempAllNumsScoresArray = JSON.parse(JSON.stringify(allNumsScoresArray));
         for (j = 0; j < l; j++) {
-            greatestNumIndex = greatestNumber(allNumsScoresArray);
+            greatestNumIndex = greatestNumber(tempAllNumsScoresArray);
             currentItem = allNumsArray[greatestNumIndex];
 
             displayedNumsArray.push(currentItem);
             remainingItemsArray.splice(remainingItemsArray.indexOf(currentItem), 1);
 
-            allNumsScoresArray[greatestNumIndex] = -99999;
+            tempAllNumsScoresArray[greatestNumIndex] = -99999;
         }
 
         displayedNumsArray = shuffle(displayedNumsArray);
@@ -238,7 +195,7 @@ function enter() {
         //strStr = strStr + '\n' + time;
         //console.log('ALL TIMES: ' + strStr);
         //console.log('NUMBER: ' + lalala);
-        //console.log('AVERAGE: ' + getAverage(strStr.replace('\n', '').split('\n'))); 
+        //console.log('AVERAGE: ' + avg(strStr.replace('\n', '').split('\n'))); 
     }
 }
 
@@ -250,65 +207,9 @@ setInterval(function () {
     enter();
 }, 1);
 
-function getAverage(list) {
+function avg(list) {
     return (list.map(item => Number(item)).reduce((a, b) => a + b) / list.length).toFixed(1);
 } */
-
-function getLetters(inp) {
-    let inpArr = Array.from(inp);
-
-    let randomLetter = '';
-    let final = '';
-
-    for (j = 0; j < inpArr.length; j++) {
-
-        switch (inpArr[j]) {
-            case '0':
-                randomLetter = '0';
-                break;
-
-            case '1':
-                randomLetter = '1';
-                break;
-
-            case '2':
-                randomLetter = two[Math.floor(Math.random() * two.length)];
-                break;
-
-            case '3':
-                randomLetter = three[Math.floor(Math.random() * three.length)];
-                break;
-
-            case '4':
-                randomLetter = four[Math.floor(Math.random() * four.length)];
-                break;
-
-            case '5':
-                randomLetter = five[Math.floor(Math.random() * five.length)];
-                break;
-
-            case '6':
-                randomLetter = six[Math.floor(Math.random() * six.length)];
-                break;
-
-            case '7':
-                randomLetter = seven[Math.floor(Math.random() * seven.length)];
-                break;
-
-            case '8':
-                randomLetter = eight[Math.floor(Math.random() * eight.length)];
-                break;
-
-            case '9':
-                randomLetter = nine[Math.floor(Math.random() * nine.length)];
-                break;
-        }
-
-        final = final + randomLetter;
-    }
-
-    return final;
-}
 
 function getNumber(letter) {
     letter = letter.toUpperCase();
@@ -427,32 +328,28 @@ function randomNum() { // now only generates numbers without 0s or 1s
 }
 
 function numLetters(string) { // returns number of letters in a string, generated by chatgpt
-    // Use a regular expression to match all letters (both uppercase and lowercase)
     const letters = string.match(/[A-z]/g);
-    // Return the number of letters found, or 0 if there are no matches
-    return letters ? letters.length : 0;
+    return letters ? letters.length : 0; // returns 0 if null
 }
 
 function numNumbers(string) { // returns number of numbers in a string, generated by chatgpt
-    // Use a regular expression to match all numeric characters
     const numbers = string.match(/[0-9]/g);
-    // Return the number of numbers found, or 0 if there are no matches
-    return numbers ? numbers.length : 0;
+    return numbers ? numbers.length : 0; // returns 0 if null
 }
 
 function numDashes(string) { // returns number of dashes in a string, generated by chatgpt
-    // Use a regular expression to match all dash characters
     const dashes = string.match(/-/g);
-    // Return the number of dashes found, or 0 if there are no matches
-    return dashes ? dashes.length : 0;
+    return dashes ? dashes.length : 0; // returns 0 if null
 }
 
-function getAverage(array) { // returns the average of a list of numbers, generated by chatgpt
+function getAverage(array) { // returns the average of an array of numbers, generated by chatgpt
     let sum = 0;
-    for (let i = 0; i < array.length; i++) {
-        sum += array[i];
-    }
+    for (let i = 0; i < array.length; i++) sum += array[i];
     return sum / array.length;
+}
+
+function getScore(vanity) { // returns score of a vanity number, can be negative or positive
+    return numLetters(vanity) - numNumbers(vanity) - (numDashes(vanity) - 1)
 }
 
 function smallestNumber(array) {
