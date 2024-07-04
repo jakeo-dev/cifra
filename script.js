@@ -9,16 +9,16 @@ function readN() {
             if (txtFile.status === 200) {
                 // Makes sure it's found the file.
                 wordList = txtFile.responseText;
-                wordArray = wordList.split('\n');
+                wordsArray = wordList.split('\n');
 
-                wordNumsArray = [];
-                for (j = 0; j < wordArray.length; j++) {
+                numerosArray = [];
+                for (j = 0; j < wordsArray.length; j++) {
                     numeroFinal = '';
-                    for (k = 0; k < wordArray[j].length; k++) {
-                        numero = getNumber(wordArray[j][k]);
+                    for (k = 0; k < wordsArray[j].length; k++) {
+                        numero = getNumber(wordsArray[j][k]);
                         numeroFinal += numero;
                     }
-                    wordNumsArray.push(numeroFinal);
+                    numerosArray.push(numeroFinal);
                 }
             }
         }
@@ -106,10 +106,10 @@ function enter() {
         let twoNumsArray = [];
         let threeNumsArray = [];
 
-        for (m = 0; m < wordNumsArray.length; m++) {
-            if (inp.includes(wordNumsArray[m])) {
+        for (m = 0; m < numerosArray.length; m++) {
+            if (inp.includes(numerosArray[m])) {
                 // put first word in phone number
-                finalNumb = inp.replace(wordNumsArray[m], '-' + wordArray[m] + '-');
+                finalNumb = inp.replace(numerosArray[m], '-' + wordsArray[m] + '-');
                 oneNumsArray.push(fixDashes(finalNumb));
             }
         }
@@ -117,9 +117,9 @@ function enter() {
         if (oneNumsArray.length > 0 && (numOfGoodNums(oneNumsArray[oneNumsArray.length - 1]) > 2 || numOfGoodNums(oneNumsArray[0]) > 2)) {
             // put second word in phone number (if possible)
             for (n = 0; n < oneNumsArray.length; n++) {
-                for (o = 0; o < wordNumsArray.length; o++) {
-                    if (oneNumsArray[n].includes(wordNumsArray[o])) {
-                        finalNumb = oneNumsArray[n].replace(wordNumsArray[o], '-' + wordArray[o] + '-');
+                for (o = 0; o < numerosArray.length; o++) {
+                    if (oneNumsArray[n].includes(numerosArray[o])) {
+                        finalNumb = oneNumsArray[n].replace(numerosArray[o], '-' + wordsArray[o] + '-');
                         twoNumsArray.push(fixDashes(finalNumb));
                     }
                 }
@@ -128,9 +128,9 @@ function enter() {
             if (twoNumsArray.length > 0 && (numOfGoodNums(twoNumsArray[twoNumsArray.length - 1]) > 2 || numOfGoodNums(twoNumsArray[0]) > 2)) {
                 // put third word in phone number (if possible)
                 for (p = 0; p < twoNumsArray.length; p++) {
-                    for (q = 0; q < wordNumsArray.length; q++) {
-                        if (twoNumsArray[p].includes(wordNumsArray[q])) {
-                            finalNumb = twoNumsArray[p].replace(wordNumsArray[q], '-' + wordArray[q] + '-');
+                    for (q = 0; q < numerosArray.length; q++) {
+                        if (twoNumsArray[p].includes(numerosArray[q])) {
+                            finalNumb = twoNumsArray[p].replace(numerosArray[q], '-' + wordsArray[q] + '-');
                             threeNumsArray.push(fixDashes(finalNumb));
                         }
                     }
