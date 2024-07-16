@@ -592,28 +592,12 @@ video {
   right: 1.5rem;
 }
 
-.top-4 {
-  top: 1rem;
+.top-2 {
+  top: 0.5rem;
 }
 
 .top-6 {
   top: 1.5rem;
-}
-
-.top-3 {
-  top: 0.75rem;
-}
-
-.top-0 {
-  top: 0px;
-}
-
-.top-1 {
-  top: 0.25rem;
-}
-
-.top-2 {
-  top: 0.5rem;
 }
 
 .z-10 {

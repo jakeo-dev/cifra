@@ -160,8 +160,8 @@ function enter() {
         else l = allNumsArray.length;
 
         let tempAllNumsScoresArray = JSON.parse(JSON.stringify(allNumsScoresArray));
-        for (j = 0; j < l; j++) { // detrmine the top l vanity numbers
-            greatestNumIndex = greatestNumber(tempAllNumsScoresArray);
+        for (j = 0; j < l; j++) { // determine the top l vanity numbers
+            greatestNumIndex = indexOfGreatestNumber(tempAllNumsScoresArray);
             greatestItem = allNumsArray[greatestNumIndex];
 
             topNumsArray.push(greatestItem);
@@ -363,7 +363,7 @@ function getScore(vanity) { // returns score of a vanity number, can be negative
     return numLetters(vanity) - numNumbers(vanity) - (numDashes(vanity) - 1)
 }
 
-function smallestNumber(array) {
+function indexOfSmallestNumber(array) {
     let smallest = 99999;
     let smallestNumIndex = -1;
 
@@ -376,7 +376,7 @@ function smallestNumber(array) {
     return smallestNumIndex;
 }
 
-function greatestNumber(array) {
+function indexOfGreatestNumber(array) {
     let greatest = -99999;
     let greatestNumIndex = -1;
 
