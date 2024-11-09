@@ -1,24 +1,24 @@
 window.onload = readN;
 
 function readN() {
-    var txtFile = new XMLHttpRequest();
+    const txtFile = new XMLHttpRequest();
     txtFile.open('GET', '/words.txt', true);
     txtFile.onreadystatechange = function () {
         if (txtFile.readyState === 4) {
             // Makes sure the document is ready to parse.
             if (txtFile.status === 200) {
                 // Makes sure it's found the file.
-                wordList = txtFile.responseText;
+                let wordList = txtFile.responseText;
                 wordsArray = wordList.split('\n');
 
                 numerosArray = [];
-                for (j = 0; j < wordsArray.length; j++) {
-                    numeroFinal = '';
-                    for (k = 0; k < wordsArray[j].length; k++) {
-                        numero = getNumber(wordsArray[j][k]);
-                        numeroFinal += numero;
+                for (let j = 0; j < wordsArray.length; j++) {
+                    let numero = '';
+                    for (let k = 0; k < wordsArray[j].length; k++) {
+                        let numeroLetter = getNumber(wordsArray[j][k]);
+                        numero += numeroLetter;
                     }
-                    numerosArray.push(numeroFinal);
+                    numerosArray.push(numero);
                 }
             }
         }
@@ -37,9 +37,9 @@ if (localStorage.getItem('savedNums') !== '[""]' && localStorage.getItem('savedN
     savedNumsList = JSON.parse(localStorage.getItem('savedNums'));
     document.getElementById('slSubtext').classList.add('hidden');
 
-    for (let i = 0; i < savedNumsList.length; i++) {
+    for (let savedNum of savedNumsList) {
         let li = document.createElement('li');
-        li.innerText = savedNumsList[i];
+        li.innerText = savedNum;
         li.className = 'savedNum';
         document.getElementById('savedList').appendChild(li);
     }
@@ -93,12 +93,12 @@ function enter() {
     } else {
         const start = performance.now();
 
-        for (i = 0; i < document.getElementById('numsList').getElementsByClassName('item').length; i++) {
+        for (let i = 0; i < document.getElementById('numsList').getElementsByClassName('item').length; i++) {
             document.getElementById('i' + i).innerText = '';
         }
 
         let moreNumsLength = document.getElementById('moreNumsList').getElementsByClassName('item').length + document.getElementById('numsList').getElementsByClassName('item').length;
-        for (i = document.getElementById('numsList').getElementsByClassName('item').length; i < moreNumsLength; i++) {
+        for (let i = document.getElementById('numsList').getElementsByClassName('item').length; i < moreNumsLength; i++) {
             document.getElementById('i' + i).remove();
         }
 
@@ -106,7 +106,7 @@ function enter() {
         let twoNumsArray = [];
         let threeNumsArray = [];
 
-        for (m = 0; m < numerosArray.length; m++) {
+        for (let m = 0; m < numerosArray.length; m++) {
             if (inp.includes(numerosArray[m])) {
                 // put first word in phone number
                 finalNumb = inp.replace(numerosArray[m], '-' + wordsArray[m] + '-');
@@ -116,8 +116,8 @@ function enter() {
 
         if (oneNumsArray.length > 0 && (numOfGoodNums(oneNumsArray[oneNumsArray.length - 1]) > 2 || numOfGoodNums(oneNumsArray[0]) > 2)) {
             // put second word in phone number (if possible)
-            for (n = 0; n < oneNumsArray.length; n++) {
-                for (o = 0; o < numerosArray.length; o++) {
+            for (let n = 0; n < oneNumsArray.length; n++) {
+                for (let o = 0; o < numerosArray.length; o++) {
                     if (oneNumsArray[n].includes(numerosArray[o])) {
                         finalNumb = oneNumsArray[n].replace(numerosArray[o], '-' + wordsArray[o] + '-');
                         twoNumsArray.push(fixDashes(finalNumb));
@@ -127,8 +127,8 @@ function enter() {
 
             if (twoNumsArray.length > 0 && (numOfGoodNums(twoNumsArray[twoNumsArray.length - 1]) > 2 || numOfGoodNums(twoNumsArray[0]) > 2)) {
                 // put third word in phone number (if possible)
-                for (p = 0; p < twoNumsArray.length; p++) {
-                    for (q = 0; q < numerosArray.length; q++) {
+                for (let p = 0; p < twoNumsArray.length; p++) {
+                    for (let q = 0; q < numerosArray.length; q++) {
                         if (twoNumsArray[p].includes(numerosArray[q])) {
                             finalNumb = twoNumsArray[p].replace(numerosArray[q], '-' + wordsArray[q] + '-');
                             threeNumsArray.push(fixDashes(finalNumb));
@@ -141,7 +141,7 @@ function enter() {
         allNumsArray = removeDuplicates(oneNumsArray.concat(twoNumsArray, threeNumsArray));
 
         allNumsScoresArray = JSON.parse(JSON.stringify(allNumsArray));
-        for (i = 0; i < allNumsScoresArray.length; i++) {
+        for (let i = 0; i < allNumsScoresArray.length; i++) {
             allNumsScoresArray[i] = getScore(allNumsArray[i]);
         }
 
@@ -160,7 +160,7 @@ function enter() {
         else l = allNumsArray.length;
 
         let tempAllNumsScoresArray = JSON.parse(JSON.stringify(allNumsScoresArray));
-        for (j = 0; j < l; j++) { // determine the top l vanity numbers
+        for (let j = 0; j < l; j++) { // determine the top l vanity numbers
             greatestNumIndex = indexOfGreatestNumber(tempAllNumsScoresArray);
             greatestItem = allNumsArray[greatestNumIndex];
 
@@ -169,7 +169,7 @@ function enter() {
             tempAllNumsScoresArray[greatestNumIndex] = -99999;
         }
 
-        for (k = 0; k < document.getElementById('numsList').getElementsByClassName('item').length; k++) {
+        for (let k = 0; k < document.getElementById('numsList').getElementsByClassName('item').length; k++) {
             randomItem = topNumsArray[Math.floor(Math.random() * topNumsArray.length)];
             if (randomItem != undefined) {
                 displayedNumsArray.push(randomItem);
@@ -197,7 +197,7 @@ function enter() {
         //console.log('—————————————————');
 
         const end = performance.now();
-        time = (end - start).toFixed(1);
+        let time = (end - start).toFixed(1);
         /* if (allNumsArray.length > 400) */ console.log('%c' + inp + '%c\n' + allNumsArray.length + ' nums\n' + time + ' ms\n' + overallNumberQuality + ' quality', bold, normal);
         document.getElementById('generationText').innerText = allNumsArray.length + ' vanity numbers generated in ' + time + ' ms';
 
@@ -243,30 +243,26 @@ function getNumber(letter) {
 }
 
 function isLetter(str) {
-    if (str.toUpperCase() != str.toLowerCase()) {
-        return true;
-    } else {
-        return false;
-    }
+    return str.toUpperCase() != str.toLowerCase();
 }
 
 function fixDashes(unfixed) { // only put one dash between numbers and letters
-    fixed = unfixed.replaceAll(/--+/g, '-').toUpperCase();
+    let fixed = unfixed.replaceAll(/--+/g, '-').toUpperCase();
     if (fixed.startsWith('-')) fixed = fixed.substring(1);
     if (fixed.endsWith('-')) fixed = fixed.substring(0, fixed.length - 1);
     return fixed;
 }
 
 function numOfGoodNums(string) { // find length of longest string of consecutive numbers 2-9 from the input
-    numsArr = string.replace(/[^2-9]/g, '+').split('+').sort(function (a, b) { return a - b });
+    let numsArr = string.replace(/[^2-9]/g, '+').split('+').sort(function (a, b) { return a - b });
     return numsArr[numsArr.length - 1].length;
 }
 
 function longestWord(string) { // find length of longest string of consecutive letters A-Z from the input
-    wordsArr = string.replace(/[^A-Z]/g, '+').split('+').sort();
-    thingArr = [];
-    for (i = 0; i < wordsArr.length; i++) {
-        if (wordsArr[i] != '' && wordsArr[i] != null) thingArr.push(wordsArr[i].length);
+    let wordsArr = string.replace(/[^A-Z]/g, '+').split('+').sort();
+    let thingArr = [];
+    for (let word of wordsArr) {
+        if (word != '' && word != null) thingArr.push(word.length);
     }
     thingArr.sort();
     return thingArr[thingArr.length - 1].length;
@@ -280,7 +276,7 @@ function showAllNums() {
 
     let moreNumsLength = remainingItemsArray.length;
 
-    for (i = 0; i < moreNumsLength; i++) { // display random phone numbers from the ones generated
+    for (let i = 0; i < moreNumsLength; i++) { // display random phone numbers from the ones generated
         randomItem = remainingItemsArray[Math.floor(Math.random() * remainingItemsArray.length)];
         if (randomItem != undefined) {
             const li = document.createElement('li');
@@ -319,18 +315,18 @@ function shuffle(array) {
     let tempArray = array.slice();
     let finalArray = [];
 
-    for (let i = 0; i < array.length; i++) {
-        itemNow = tempArray[Math.floor(Math.random() * tempArray.length)];
+    for (let i of array) {
+        let itemNow = tempArray[Math.floor(Math.random() * tempArray.length)];
         finalArray.push(itemNow);
-        tempArray.splice(tempArray.indexOf(itemNow), 1)
+        tempArray.splice(tempArray.indexOf(itemNow), 1);
     }
 
     return finalArray;
 }
 
 function randomGen() { // gets random number w/o 0's or 1's, then generates vanity numbers
-    str = '';
-    for (i = 0; i < 10; i++) {
+    let str = '';
+    for (let i = 0; i < 10; i++) {
         str += (Math.random() * (9 - 2) + 2).toFixed(0);
     }
     document.getElementById('input').value = str;
@@ -338,24 +334,24 @@ function randomGen() { // gets random number w/o 0's or 1's, then generates vani
     enter();
 }
 
-function numLetters(string) { // returns number of letters in a string, generated by chatgpt
+function numLetters(string) { // returns number of letters in a string
     const letters = string.match(/[A-z]/g);
     return letters ? letters.length : 0; // returns 0 if null
 }
 
-function numNumbers(string) { // returns number of numbers in a string, generated by chatgpt
-    const numbers = string.match(/[0-9]/g);
+function numNumbers(string) { // returns number of numbers in a string
+    const numbers = string.match(/\d/g);
     return numbers ? numbers.length : 0; // returns 0 if null
 }
 
-function numDashes(string) { // returns number of dashes in a string, generated by chatgpt
+function numDashes(string) { // returns number of dashes in a string
     const dashes = string.match(/-/g);
     return dashes ? dashes.length : 0; // returns 0 if null
 }
 
-function getAverage(array) { // returns the average of an array of numbers, generated by chatgpt
+function getAverage(array) { // returns the average of an array of numbers
     let sum = 0;
-    for (let i = 0; i < array.length; i++) sum += array[i];
+    for (let number of array) sum += number;
     return sum / array.length;
 }
 
@@ -367,7 +363,7 @@ function indexOfSmallestNumber(array) {
     let smallest = 99999;
     let smallestNumIndex = -1;
 
-    for (i = 0; i < array.length; i++) {
+    for (let i = 0; i < array.length; i++) {
         if (array[i] < smallest) {
             smallest = array[i];
             smallestNumIndex = i;
@@ -380,7 +376,7 @@ function indexOfGreatestNumber(array) {
     let greatest = -99999;
     let greatestNumIndex = -1;
 
-    for (i = 0; i < array.length; i++) {
+    for (let i = 0; i < array.length; i++) {
         if (array[i] > greatest) {
             greatest = array[i];
             greatestNumIndex = i;
