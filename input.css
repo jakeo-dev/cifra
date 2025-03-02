@@ -10,4 +10,12 @@
   .savedNum {
     @apply decoration-2 hover:line-through transition-all cursor-pointer;
   }
+
+  .invisibleFade {
+    @apply invisible opacity-0 transition-all;
+  }
+
+  .visibleFade {
+    @apply visible opacity-100 transition-all;
+  }
 }

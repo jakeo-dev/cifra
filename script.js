@@ -3,14 +3,16 @@ window.onload = readN;
 function readN() {
     const txtFile = new XMLHttpRequest();
     txtFile.open('GET', '/words.txt', true);
-    txtFile.onreadystatechange = function () {
+    txtFile.onreadystatechange = () => {
+        // makes sure document is ready to parse
         if (txtFile.readyState === 4) {
-            // Makes sure the document is ready to parse.
+            // makes sure the file is found
             if (txtFile.status === 200) {
-                // Makes sure it's found the file.
+                // read & get word list -> wordsArray
                 let wordList = txtFile.responseText;
                 wordsArray = wordList.split('\n');
 
+                // set each word to correspondinng numero -> numerosArray
                 numerosArray = [];
                 for (let j = 0; j < wordsArray.length; j++) {
                     let numero = '';
@@ -33,6 +35,7 @@ const normal = 'font-weight: normal';
 
 let savedNumsList = [];
 
+// get saved numbers from local storage and add them to the starred numbers modal
 if (localStorage.getItem('savedNums') !== '[""]' && localStorage.getItem('savedNums') !== null && localStorage.getItem('savedNums') !== undefined) {
     savedNumsList = JSON.parse(localStorage.getItem('savedNums'));
     document.getElementById('slSubtext').classList.add('hidden');
@@ -47,8 +50,8 @@ if (localStorage.getItem('savedNums') !== '[""]' && localStorage.getItem('savedN
     document.getElementById('slSubtext').classList.remove('hidden');
 }
 
-document.querySelectorAll('.item').forEach(function (element) {
-    element.addEventListener('click', function (event) {
+document.querySelectorAll('.item').forEach((element) => {
+    element.addEventListener('click', (event) => {
         savedNumsList.push(event.target.innerText);
         localStorage.setItem('savedNums', JSON.stringify(savedNumsList));
         document.getElementById('slSubtext').classList.add('hidden');
@@ -58,21 +61,21 @@ document.querySelectorAll('.item').forEach(function (element) {
         li.className = 'savedNum';
         document.getElementById('savedList').appendChild(li);
 
-        alert('Starred number: ' + event.target.innerText + '\n\nView all starred numbers by clicking the star icon');
+        alert('Starred number: ' + event.target.innerText + '\n\nYou can see it by clicking "View starred numbers"');
     });
 });
 
-document.getElementById('openSavedBtn').addEventListener('click', function (event) {
+document.getElementById('openSavedBtn').addEventListener('click', () => {
     document.getElementById('savedListDiv').classList.toggle('hidden');
 });
 
-document.addEventListener('click', function (event) {
+document.addEventListener('click', (event) => {
     if (event.target.id != 'savedListDiv' && event.target.id != 'openSavedBtn' && event.target.id != 'openSavedBtnI' && event.target.id != 'openSavedBtnS' && event.target.className != 'savedNum') {
         document.getElementById('savedListDiv').classList.add('hidden');
     }
 });
 
-document.getElementById('savedListDiv').addEventListener('click', function (event) {
+document.getElementById('savedListDiv').addEventListener('click', (event) => {
     if (event.target.classList.contains('savedNum')) {
         event.target.remove();
         localStorage.setItem('savedNums', JSON.stringify(document.getElementById('savedList').innerText.split('\n')));
@@ -212,7 +215,7 @@ function enter() {
 /* let strStr = '';
 let lalala = 0;
 
-setInterval(function () {
+setInterval(() => {
     randomGen();
 }, 1);
 
@@ -254,7 +257,7 @@ function fixDashes(unfixed) { // only put one dash between numbers and letters
 }
 
 function numOfGoodNums(string) { // find length of longest string of consecutive numbers 2-9 from the input
-    let numsArr = string.replace(/[^2-9]/g, '+').split('+').sort(function (a, b) { return a - b });
+    let numsArr = string.replace(/[^2-9]/g, '+').split('+').sort((a, b) => { return a - b });
     return numsArr[numsArr.length - 1].length;
 }
 
@@ -290,8 +293,8 @@ function showAllNums() {
         }
     }
 
-    document.getElementById('moreNumsList').querySelectorAll('.item').forEach(function (element) {
-        element.addEventListener('click', function (event) {
+    document.getElementById('moreNumsList').querySelectorAll('.item').forEach((element) => {
+        element.addEventListener('click', (event) => {
             savedNumsList.push(event.target.innerText);
             localStorage.setItem('savedNums', JSON.stringify(savedNumsList));
             document.getElementById('slSubtext').classList.add('hidden');
@@ -301,7 +304,7 @@ function showAllNums() {
             li.className = 'savedNum';
             document.getElementById('savedList').appendChild(li);
 
-            alert('Starred number: ' + event.target.innerText + '\n\nView all starred numbers by clicking the star icon');
+            alert('Starred number: ' + event.target.innerText + '\n\nYou can see it by clicking "View starred numbers"');
         });
     });
 }
@@ -385,7 +388,7 @@ function indexOfGreatestNumber(array) {
     return greatestNumIndex;
 }
 
-document.getElementById('input').addEventListener('keypress', function (event) {
+document.getElementById('input').addEventListener('keypress', (event) => {
     if (event.key === 'Enter' && document.getElementById('input') === document.activeElement) {
         document.getElementById('generate').click();
     }
