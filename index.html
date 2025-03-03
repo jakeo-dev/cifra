@@ -36,11 +36,12 @@
             class='float-right flex items-center md:text-lg rounded-md bg-gray-400/20 hover:bg-gray-400/30 active:bg-gray-400/40 transition px-4 py-2'
             id='openSavedBtn'><i class='fa-solid fa-star mr-1.5' id='openSavedBtnI' aria-hidden></i><span
                 id='openSavedBtnS'>View starred numbers</span></button>
-        <div class='hidden relative top-2 bg-gray-200 w-full shadow-md px-5 py-3 md:px-6 md:py-5 z-10 rounded-md max-h-96 overflow-y-scroll'
+        <div class='hidden relative top-2 bg-gray-200 w-full shadow-md px-5 py-3 md:px-6 md:py-5 z-10 rounded-md max-h-[22rem] overflow-y-scroll'
             id='savedListDiv'>
-            <h1 class='italic text-right font-light' id='slSubtext'>You haven't starred any numbers yet</h1>
+            <h1 class='italic text-right' id='slSubtext'>You haven't starred any numbers yet</h1>
             <ul class='text-xl md:text-2xl font-FiraCode leading-10 md:leading-[2.75rem] text-right' id='savedList'>
             </ul>
+            <h2 class='italic text-right font-light text-sm mt-3' id='slFooter'>Starred numbers are saved locally.</h2>
         </div>
     </div>
 
@@ -96,21 +97,20 @@
         class='max-w-[60rem] mx-auto hidden md:grid-cols-2 lg:grid-cols-3 gap-8 text-3xl font-FiraCode text-center justify-center items-center mt-8'>
     </div>
 
-    <footer class='bg-gray-100 fixed bottom-0 left-0 w-full p-3 md:p-4'>
+    <footer class='bg-gray-100 fixed bottom-0 left-0 w-full p-3 md:py-4 md:px-8'>
         <div class='text-xs md:text-sm text-center'>
-            <h3>No information, including phone numbers, is collected on this website. "Starred numbers" are saved
-                locally.</h3>
-            <div class="flex justify-center items-center mt-2.5">
+            <div class="flex justify-center items-center">
                 <a class='hover:drop-shadow-md active:drop-shadow-none transition' href='https://jakeo.dev'
                     target='_blank'>
                     <img src="https://www.jakeo.dev/logos/bunny-jakeo-wordmark.png" class="w-[3.25rem] md:w-16" />
                 </a>
                 <span class='mx-2 md:mx-3'>•</span>
-                <a class='hover:text-blue-600 underline hover:decoration-wavy hover:decoration-1 transition'
+                <a class='hover:text-blue-600 underline decoration-[1.5px] hover:decoration-wavy hover:decoration-[0.75px] transition'
                     href='https://github.com/jakeo-dev/cifra' target='_blank'><i class='fa-brands fa-github mr-1'
                         aria-hidden></i><span>GitHub</span>
                 </a>
             </div>
+            <h3 class="mt-2">No information, including phone numbers, is collected on this website.</h3>
         </div>
     </footer>
 

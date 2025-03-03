@@ -670,8 +670,12 @@ video {
   margin-top: 3rem;
 }
 
-.mt-2\.5 {
-  margin-top: 0.625rem;
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
 }
 
 .mt-8 {
@@ -703,8 +707,8 @@ video {
   height: min-content;
 }
 
-.max-h-96 {
-  max-height: 24rem;
+.max-h-\[22rem\] {
+  max-height: 22rem;
 }
 
 .w-72 {
@@ -924,6 +928,10 @@ video {
   text-decoration-line: underline;
 }
 
+.decoration-\[1\.5px\] {
+  text-decoration-thickness: 1.5px;
+}
+
 .shadow-md {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
@@ -971,8 +979,8 @@ video {
   text-decoration-style: wavy;
 }
 
-.hover\:decoration-1:hover {
-  text-decoration-thickness: 1px;
+.hover\:decoration-\[0\.75px\]:hover {
+  text-decoration-thickness: 0.75px;
 }
 
 .hover\:drop-shadow-md:hover {
@@ -1040,13 +1048,19 @@ video {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .md\:p-4 {
-    padding: 1rem;
-  }
-
   .md\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .md\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .md\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
   .md\:py-5 {
