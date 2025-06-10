@@ -1,12 +1,9 @@
 {
-    "name": "phone-number",
+    "name": "cifra",
     "version": "1.0.0",
-    "description": "",
+    "license": "MIT",
     "main": "script.js",
     "scripts": {
         "start": "npx tailwindcss -i ./input.css -o ./style.css --watch"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC"
+    }
 }
